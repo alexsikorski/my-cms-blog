@@ -1,7 +1,16 @@
 import React from 'react';
 import moment from 'moment';
+import { textContent } from 'domutils';
+
+function copyToClipBoard(id) {
+  const element = document.getElementById(id);
+  // substring because we ignore "Copy"
+  navigator.clipboard.writeText(element.textContent.substring(4, element.textContent.length));
+}
 
 const PostDetail = ({ post }) => {
+
+  console.log(post);
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 
@@ -17,9 +26,29 @@ const PostDetail = ({ post }) => {
       if (obj.underline) {
         modifiedText = (<u key={index}>{text}</u>);
       }
+      if (obj.code) {
+        modifiedText = (<code key={index} className='border-2 break-all bg-neutral-100 text-blackmb-4 rounded-md'>{text}</code>);
+      }
     }
 
     switch (type) {
+      //TODO: implement bullet-list and ordered number list
+      // case 'bulleted-list':
+      //   return <div className='mb-4' key={index}>
+      //     {modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}
+      //   </div>
+      case 'code-block':
+        return <code id={index} key={index} className='multiline-text block overflow-x-auto p-1 border-2 bg-neutral-100 text-black mb-4 rounded-md'>
+          <span className='float-right transition duration-500 transform hover:-translate-x-1 hover:bg-amber-500 hover:text-white inline-block bg-neutral-500/25 text-white/50
+                  text-lg font-medium rounded-full text-white px-5 cursor-pointer
+                  '
+            onClick={() => copyToClipBoard(index)}
+          >Copy
+          </span>
+          {modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}
+        </code>
+      case 'block-quote':
+        return <blockquote key={index} className="p-1 border-l-4 bg-neutral-100 text-neutral-600 mb-4 rounded-md">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</blockquote>
       case 'heading-three':
         return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
       case 'paragraph':
@@ -34,6 +63,7 @@ const PostDetail = ({ post }) => {
             height={obj.height}
             width={obj.width}
             src={obj.src}
+            className='object-top h-full w-full object-cover shadow-lg rounded-lg lg:rounded-lg'
           />
         );
       default:
