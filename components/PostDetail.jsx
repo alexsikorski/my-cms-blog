@@ -9,8 +9,6 @@ function copyToClipBoard(id) {
 }
 
 const PostDetail = ({ post }) => {
-
-  console.log(post);
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 

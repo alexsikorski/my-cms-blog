@@ -14,7 +14,11 @@ Tailwind CSS
 
 Create .env file in root directory in this format:
 
-```NEXT_PUBLIC_GRAPHCMS_ENDPOINT=xxxxxxxxxxxxxxxxx.com```
+```NEXT_PUBLIC_GRAPHCMS_ENDPOINT=xxxxxxxxxxxxxxxxx```
+
+```GRAPHCMS_TOKEN=xxxxxxxxxxxxxxxxx```
+
+Using GraphCMS set up schema using reference video.
 
 ## References
 

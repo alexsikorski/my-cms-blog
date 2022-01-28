@@ -7,7 +7,7 @@ export default function Home({ posts }) {
   return (
     <div className='container mx-auto px-10 mb-8'>
       <Head>
-        <title>Blog</title>
+        <title>Alex Sikorski'Blog</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
@@ -16,7 +16,7 @@ export default function Home({ posts }) {
           {posts.map((post) => <PostCard post={post.node} key={post.title} />)}
         </div>
         <div className='lg:col-span-4 col-span-1'>
-          <div className='lg:sticky relatve top-8'>
+          <div className='lg:sticky relative top-8'>
             <PostWidget />
             <Categories />
           </div>
