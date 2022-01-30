@@ -47,16 +47,6 @@ body {
   }
 }
 
-.react-multi-carousel-list {
-  & .arrow-btn{
-    transition: width 300ms ease;
-    width: 50px;
-    &:hover{
-      width: 60px;
-    }
-  }
-}
-
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0,0,0,0.10);
 }
@@ -80,16 +70,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-.react-multi-carousel-list {
-  & .arrow-btn{
-    transition: width 300ms ease;
-    width: 50px;
-    &:hover{
-      width: 60px;
-    }
-  }
 }
 
 .multiline-text{
