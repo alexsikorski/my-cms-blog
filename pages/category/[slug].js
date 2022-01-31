@@ -11,7 +11,23 @@ const CategoryPost = ({ posts }) => {
         return <Loader />;
     }
 
-    return (
+    return posts.length == 0 ?
+        <div className="container mx-auto px-10 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="col-span-1 lg:col-span-8 bg-white rounded-md p-8 text-center">
+                    <h1 class="text-center mb-8  text-3xl font-semibold">
+                        Coming soon...</h1>
+                    <a class="transition duration-500 transform hover:-translate-y-1 inline-block bg-amber-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer" href="/">
+                        Return home.</a>
+                </div>
+                <div className="col-span-1 lg:col-span-4">
+                    <div className="relative lg:sticky top-8">
+                        <Categories />
+                    </div>
+                </div>
+            </div>
+        </div>
+        :
         <div className="container mx-auto px-10 mb-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div className="col-span-1 lg:col-span-8">
@@ -26,7 +42,6 @@ const CategoryPost = ({ posts }) => {
                 </div>
             </div>
         </div>
-    );
 };
 export default CategoryPost;
 
