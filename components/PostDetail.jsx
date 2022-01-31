@@ -38,7 +38,7 @@ const PostDetail = ({ post }) => {
       case 'code-block':
         return <code id={index} key={index} className='multiline-text block overflow-x-auto p-1 border-2 bg-neutral-100 text-black mb-4 rounded-md'>
           <span className='float-right transition duration-500 transform hover:-translate-x-1 hover:bg-amber-500 hover:text-white inline-block bg-neutral-500/25 text-white/50
-                  text-lg font-medium rounded-full text-white px-5 cursor-pointer
+                  text-lg font-medium rounded-full text-white px-5 cursor-pointer select-none
                   '
             onClick={() => copyToClipBoard(index)}
           >Copy

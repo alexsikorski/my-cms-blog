@@ -11,18 +11,28 @@ const Categories = () => {
             .then((newCategories) => setCategories(newCategories))
     }, []);
 
-    function generateSpan(name, slug, hex) {
-        return <span name='category' id={slug}
-            className='cursor-pointer block pb-3 mb-3
-            p-3 text-center text-black rounded-md bg-amber-500'>
+    function generateSpan(name, slug) {
+        if (slug == 'leetcode-easy') return <span name='category' id={slug}
+            className={`cursor-pointer block pb-3 mb-3
+        p-3 text-center text-[#07b87b] rounded-md bg-[#2e2f31] select-none transition`}>
             {name}
-            <br />
-            {hex}
+        </span>
+        if (slug == 'leetcode-medium') return <span name='category' id={slug}
+            className={`cursor-pointer block pb-3 mb-3
+        p-3 text-center text-[#ffc01e] rounded-md bg-[#2e2f31] select-none`}>
+            {name}
+        </span>
+        if (slug == 'leetcode-hard') return <span name='category' id={slug}
+            className={`cursor-pointer block pb-3 mb-3
+    p-3 text-center text-[#ff375f] rounded-md bg-[#2e2f31] select-none`}>
+            {name}
+        </span>
+        return <span name='category' id={slug}
+            className={`cursor-pointer block pb-3 mb-3
+            p-3 text-center text-white rounded-md bg-amber-500 select-none`}>
+            {name}
         </span>
     }
-
-    //     className={`cursor-pointer block pb-3 mb-3
-    // p-3 text-center text-black rounded-md bg-[${hex}]`}>
 
     return (<>
         <div className='bg-white shadow-lg rounded-lg p-8 mb-8 pb-12'
@@ -33,7 +43,7 @@ const Categories = () => {
             {categories.map((category) => (
 
                 <Link key={category.slug} href={`/category/${category.slug}`}>
-                    {generateSpan(category.name, category.slug, category.colour.hex)}
+                    {generateSpan(category.name, category.slug)}
                 </Link>
 
             ))}

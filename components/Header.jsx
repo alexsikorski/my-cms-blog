@@ -13,12 +13,12 @@ const Header = () => {
             .then((newCategories) => setCategories(newCategories))
     }, []);
 
-    return <div className='container mx-auto px-10 mb-8'>
+    return <div className='container mx-auto px-10 mb-8 select-none'>
         <div className='border-b w-full inline-block border-white/20 py-8 '>
             <div className='md:float-left block
-            transition duration-500 transform hover:-translate-y-1'>
+            transition duration-500 transform hover:-translate-y-1 '>
                 <Link href='/'>
-                    <span className='cursor-pointer font-bold text-4xl text-white'>
+                    <span className='cursor-pointer font-bold text-4xl text-white '>
                         Alex Sikorski<span className=' text-amber-500'>.net</span>
                     </span>
                 </Link>
