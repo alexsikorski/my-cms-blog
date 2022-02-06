@@ -4,7 +4,7 @@ import { submitComment } from '../services';
 const CommentsForm = ({ slug }) => {
     const [error, setError] = useState(false);
     const [localStorage, setLocalStorage] = useState(null);
-    const [showSuccessMesage, setShowSuccessMessage] = useState(false);
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const commentEl = useRef();
     const nameEl = useRef();
     const emailEl = useRef();
@@ -94,7 +94,7 @@ const CommentsForm = ({ slug }) => {
                 onClick={handleCommentSubmission}>
                 Post Comment
             </button>
-            {showSuccessMesage && <span className='text-xl float-right font-semibold mt-3 text-green-500'>Comment Submitted for review!</span>}
+            {showSuccessMessage && <span className='float-right font-semibold px-8 py-3 bg-green-500 text-white rounded-full'>Comment Submitted for review!</span>}
         </div>
     </div>;
 }
