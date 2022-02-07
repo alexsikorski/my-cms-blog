@@ -11,3 +11,4 @@ export { default as FeaturedPostCard } from './FeaturedPostCard';
 export { default as Loader } from './Loader';
 export { default as AdjacentPostCard } from './AdjacentPostCard';
 export { default as BgParticles } from './BgParticles';
+export { default as SearchHeaderWidget } from './SearchHeaderWidget';

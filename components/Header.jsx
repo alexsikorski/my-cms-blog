@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SearchHeaderWidget } from '.';
 import Link from 'next/link'
 
 
@@ -23,16 +24,24 @@ const Header = () => {
                     </span>
                 </Link>
             </div>
-            <div className='hidden md:float-left md:contents'>
-                {categories.map((category) => (
-                    <Link key={category.slug} href={`/category/${category.slug}`}>
-                        <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer
+            <div>
+                <span className='sm:contents'>
+                    <SearchHeaderWidget />
+                </span>
+                <span className='hidden lg:float-left lg:contents'>
+
+                    {categories.map((category) => (
+                        <Link key={category.slug} href={`/category/${category.slug}`}>
+                            <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer
                          transition duration-500 transform hover:-translate-y-1'>
-                            {category.name}
-                        </span>
-                    </Link>
-                ))}
+                                {category.name}
+                            </span>
+                        </Link>
+                    ))}
+
+                </span>
             </div>
+
         </div>
     </div>;
 };
