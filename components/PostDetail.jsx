@@ -61,7 +61,7 @@ const PostDetail = ({ post }) => {
             height={obj.height}
             width={obj.width}
             src={obj.src}
-            className='object-top h-full w-full object-cover shadow-lg rounded-lg lg:rounded-lg'
+            className='h-full w-full shadow-lg rounded-lg lg:rounded-lg'
           />
         );
       default:

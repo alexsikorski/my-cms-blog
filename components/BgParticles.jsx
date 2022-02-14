@@ -19,7 +19,7 @@ const BgParticles = () => {
               mode: "attract",
             },
             onHover: {
-              enable: true,
+              enable: false,
               mode: "repulse",
             },
             resize: true,
@@ -42,6 +42,10 @@ const BgParticles = () => {
               distance: 200,
             }
           },
+        },
+        fullScreen: {
+          enable: true,
+          zIndex: -1,
         },
         particles: {
           color: {
