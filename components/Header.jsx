@@ -26,7 +26,7 @@ const Header = () => {
             </div>
             <div>
                 <span className='sm:contents'>
-                    <SearchHeaderWidget />
+                    <SearchHeaderWidget titleContains={"react"} />
                 </span>
                 <span className='hidden lg:float-left lg:contents'>
 

@@ -39,6 +39,42 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 }
 
+export const getSearchedPosts = async (titleContains) => {
+  const query = gql`
+          query GetPosts($titleContains : String!) {
+            postsConnection(where: { title_contains: $titleContains}) {
+                edges {
+                    node {
+                        author {
+                            bio
+                            name
+                            id
+                            photo {
+                            url
+                            }
+                        }
+                        createdAt
+                        slug
+                        title
+                        brief
+                        featuredImage {
+                            url
+                        }
+                        categories {
+                            name
+                            slug
+                        }
+                    }
+                }
+            }
+        }
+  `
+
+  const result = await request(graphqlAPI, query, { titleContains });
+
+  return result.postsConnection.edges;
+}
+
 export const getPostDetails = async (slug) => {
   const query = gql`
       query GetPostDetails($slug : String!) {
