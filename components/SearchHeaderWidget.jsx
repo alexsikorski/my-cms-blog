@@ -13,9 +13,10 @@ const SearchHeaderWidget = () => {
         const { value: search } = searchEl.current;
         window.localStorage.setItem('search', search);
 
-        const slug = search.replace(/\s+/g, '-').toLowerCase();
+        const slug = search.replace(/[&\/\\#^+()$~%.'":*?<>{}!@]/g, '');
+        slug = slug.replace(/\s+/g, '-').toLowerCase();
 
-        router.push(`/search/${slug}`);
+        if (slug !== "") router.push(`/search/${slug}`);
     }
 
     return (<>

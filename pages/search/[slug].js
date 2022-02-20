@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { getCategories, getCategoryPost } from '../../services';
+import { getSearchedPosts, getCategories } from '../../services';
 import { PostCard, Categories, Loader } from '../../components';
 
 const SearchPost = ({ posts }) => {
@@ -15,8 +15,8 @@ const SearchPost = ({ posts }) => {
         <div className="container mx-auto px-10 mb-8">
             <div className="grid grid-cols-1 lg:grid-cols-10 gap-12">
                 <div className="col-span-1 lg:col-span-8 bg-white rounded-md p-8 text-center">
-                    <h1 className="text-center mb-8  text-3xl font-semibold">
-                        No results! try again?</h1>
+                    <h3 className="text-center mb-8  text-xl font-semibold">
+                        No results. try again!</h3>
                     <a className="transition duration-500 transform hover:-translate-y-1 inline-block bg-amber-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer" href="/">
                         Return home.</a>
                 </div>
@@ -46,7 +46,10 @@ const SearchPost = ({ posts }) => {
 export default SearchPost;
 
 export async function getStaticProps({ params }) {
-    const posts = await getCategoryPost(params.slug);
+
+    const titleContains = params.slug.replace(/-/g, ' ');
+
+    const posts = await getSearchedPosts(titleContains);
 
     return {
         props: { posts },
