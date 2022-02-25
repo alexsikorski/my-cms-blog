@@ -8,7 +8,7 @@ const SearchPost = ({ posts }) => {
     const router = useRouter();
 
     if (router.isFallback) {
-        return <Loader />;
+        return <></>
     }
 
     return posts.length == 0 ?
@@ -56,7 +56,6 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const test = ["test"];
     return {
         paths: [],
         fallback: true,

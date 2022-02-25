@@ -16,11 +16,12 @@ const SearchHeaderWidget = () => {
         const slug = search.replace(/[&\/\\#^+()$~%.'":*?<>{}!@]/g, '');
         slug = slug.replace(/\s+/g, '-').toLowerCase();
 
+        console.log(slug)
         if (slug !== "") router.push(`/search/${slug}`);
     }
 
     return (<>
-        <form className='inline-grid md:float-right mt-2 grid-cols-2 w-60'>
+        <form className='inline-grid md:float-right mt-2 grid-cols-2 w-60' method="post">
             <input
                 id='searchInput'
                 ref={searchEl}
