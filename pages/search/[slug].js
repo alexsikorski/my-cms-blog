@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { getSearchedPosts, getCategories } from '../../services';
+import { getSearchedPosts } from '../../services';
 import { PostCard, Categories, Loader } from '../../components';
 
 const SearchPost = ({ posts }) => {
@@ -46,7 +46,6 @@ const SearchPost = ({ posts }) => {
 export default SearchPost;
 
 export async function getStaticProps({ params }) {
-
     const titleContains = params.slug.replace(/-/g, ' ');
 
     const posts = await getSearchedPosts(titleContains);
@@ -57,9 +56,9 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const categories = await getCategories();
+    const test = ["test"];
     return {
-        paths: categories.map(({ slug }) => ({ params: { slug } })),
+        paths: [],
         fallback: true,
     };
 }

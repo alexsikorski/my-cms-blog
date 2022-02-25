@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useRouter } from 'next/router'
 
 const SearchHeaderWidget = () => {
@@ -20,8 +20,9 @@ const SearchHeaderWidget = () => {
     }
 
     return (<>
-        <span className='inline-grid md:float-right mt-2 grid-cols-2 w-60'>
+        <form className='inline-grid md:float-right mt-2 grid-cols-2 w-60'>
             <input
+                id='searchInput'
                 ref={searchEl}
                 type='text'
                 className='pl-2 pr-2 md:ml-4 outline-none w-full rounded-l-lg  bg-gray-100 text-gray-700 drop-shadow'
@@ -35,8 +36,7 @@ const SearchHeaderWidget = () => {
             >
                 Search
             </button>
-
-        </span>
+        </form>
     </>
     );
 }
