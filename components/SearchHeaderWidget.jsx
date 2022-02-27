@@ -7,6 +7,13 @@ const SearchHeaderWidget = () => {
 
     useEffect(() => {
         searchEl.current.value = window.localStorage.getItem('search');
+
+        searchEl.current.addEventListener("keyup", function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                handleSearch();
+            }
+        });
     }, [])
 
     const handleSearch = () => {
@@ -15,13 +22,11 @@ const SearchHeaderWidget = () => {
 
         const slug = search.replace(/[&\/\\#^+()$~%.'":*?<>{}!@]/g, '');
         slug = slug.replace(/\s+/g, '-').toLowerCase();
-
-        console.log(slug)
         if (slug !== "") router.push(`/search/${slug}`);
     }
 
     return (<>
-        <form className='inline-grid md:float-right mt-2 grid-cols-2 w-60' method="post">
+        <div className='inline-grid md:float-right mt-2 grid-cols-2 w-60'>
             <input
                 id='searchInput'
                 ref={searchEl}
@@ -37,7 +42,7 @@ const SearchHeaderWidget = () => {
             >
                 Search
             </button>
-        </form>
+        </div>
     </>
     );
 }
