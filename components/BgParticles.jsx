@@ -55,7 +55,7 @@ const BgParticles = () => {
             color: "#ffffff",
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.1,
             width: 1,
           },
           collisions: {
@@ -77,7 +77,7 @@ const BgParticles = () => {
             value: 80,
           },
           opacity: {
-            value: 0.1,
+            value: 0.03,
           },
           shape: {
             type: "circle",

@@ -25,7 +25,7 @@ const PostDetail = ({ post }) => {
         modifiedText = (<u key={index}>{text}</u>);
       }
       if (obj.code) {
-        modifiedText = (<code key={index} className='border-2 break-all bg-neutral-100 text-blackmb-4 rounded-md'>{text}</code>);
+        modifiedText = (<code key={index} className='border-2 break-all bg-neutral-100 text-black mb-4 rounded-md'>{text}</code>);
       }
     }
 
@@ -69,7 +69,7 @@ const PostDetail = ({ post }) => {
     }
   };
 
-  return <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
+  return <div className='bg-lighter-washed-black shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
     <div className='relative overflow-hidden shadow-md mb-6'>
       <img
         src={post.featuredImage.url}
