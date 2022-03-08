@@ -14,19 +14,19 @@ const Categories = () => {
     function generateSpan(name, slug) {
         if (slug == 'leetcode-easy') return <span name='category' id={slug}
             className={`cursor-pointer block pb-3 mb-3
-                p-3 text-center text-[#07b87b] rounded-md bg-[#2e2f31] select-none transition
+                p-3 text-center text-[#07b87b] rounded-md bg-leetcode-black select-none transition
                 transition duration-500 ease transform hover:translate-x-1`}>
             {name}
         </span>
         if (slug == 'leetcode-medium') return <span name='category' id={slug}
             className={`cursor-pointer block pb-3 mb-3      
-                p-3 text-center text-[#ffc01e] rounded-md bg-[#2e2f31] select-none
+                p-3 text-center text-[#ffc01e] rounded-md bg-leetcode-black select-none
                 transition duration-500 ease transform hover:translate-x-1`}>
             {name}
         </span>
         if (slug == 'leetcode-hard') return <span name='category' id={slug}
             className={`cursor-pointer block pb-3 mb-3
-                p-3 text-center text-[#ff375f] rounded-md bg-[#2e2f31] select-none
+                p-3 text-center text-[#ff375f] rounded-md bg-leetcode-black select-none
                 transition duration-500 ease transform hover:translate-x-1`}>
             {name}
         </span>

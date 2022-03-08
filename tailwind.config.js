@@ -8,6 +8,8 @@ module.exports = {
       colors: {
         'washed-black': '#030303',
         'lighter-washed-black': '#101010',
+        'code-black': '#171717',
+        'leetcode-black': '#2e2f31',
       },
     },
   },
