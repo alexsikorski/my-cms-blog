@@ -48,11 +48,13 @@ const CommentsForm = ({ slug }) => {
     }
 
     return <div className='bg-lighter-washed-black shadow-lg rounded-lg p-8 pb-12 mb-8'>
-        <h3 className='text-xl mb-8 font-semibold border-b pb-4'>Leave a Comment</h3>
+        <h3 className='text-white text-xl mb-8 font-semibold border-b pb-4 border-white/5'>
+            Leave a comment
+        </h3>
         <div className='grid grid-cols-1 gap-4 mb-4'>
             <textarea
                 ref={commentEl}
-                className='p-4 outline-none w-full rounded-lg focus:ring-2 focus: ring-gray-200 bg-gray-100 text-gray-700'
+                className='p-4 outline-none w-full rounded-lg text-neutral-200 font-medium focus:ring-2 focus:ring-leetcode-black bg-code-black placeholder-leetcode-black'
                 placeholder='Comment'
                 name='comment'
             />
@@ -61,14 +63,14 @@ const CommentsForm = ({ slug }) => {
             <input
                 type='text'
                 ref={nameEl}
-                className='py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus: ring-gray-200 bg-gray-100 text-gray-700'
+                className='py-2 px-4 outline-none w-full rounded-lg text-neutral-200 font-medium focus:ring-2 focus:ring-leetcode-black bg-code-black placeholder-leetcode-black'
                 placeholder='Name'
                 name='name'
             />
             <input
                 type='text'
                 ref={emailEl}
-                className='py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus: ring-gray-200 bg-gray-100 text-gray-700'
+                className='py-2 px-4 outline-none w-full rounded-lg text-neutral-200 font-medium focus:ring-2 focus:ring-leetcode-black bg-code-black placeholder-leetcode-black'
                 placeholder='Email'
                 name='email'
             />
@@ -81,7 +83,7 @@ const CommentsForm = ({ slug }) => {
                     id='storeData'
                     value='true'
                 />
-                <label className='text-gray-500 cursor-pointer ml-2' htmlFor='storeData'>
+                <label className='font-normal text-neutral-400 cursor-pointer ml-2' htmlFor='storeData'>
                     Save my email and name for next time.
                 </label>
             </div>
