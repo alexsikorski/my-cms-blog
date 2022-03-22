@@ -19,19 +19,19 @@ const Categories = () => {
         </span>
         if (slug == 'leetcode-medium') return <span name='category' id={slug}
             className={`cursor-pointer inline-block p-1    
-                p-3 text-center text-[#ffc01e] rounded-md bg-leetcode-black select-none
+                text-center text-[#ffc01e] rounded-md bg-leetcode-black select-none
                 mr-1 mt-1 text-xs font-medium`}>
             {name}
         </span>
         if (slug == 'leetcode-hard') return <span name='category' id={slug}
             className={`cursor-pointer inline-block p-1
-                p-3 text-center text-[#ff375f] rounded-md bg-leetcode-black select-none
+                text-center text-[#ff375f] rounded-md bg-leetcode-black select-none
                 mr-1 mt-1 text-xs font-medium`}>
             {name}
         </span>
         return <span name='category' id={slug}
             className={`cursor-pointer inline-block p-1
-                p-3 text-center text-white rounded-md bg-amber-500 select-none
+                text-center text-white rounded-md bg-amber-500 select-none
                 mr-1 mt-1 text-xs font-medium`}>
             {name}
         </span>
