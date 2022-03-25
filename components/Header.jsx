@@ -24,7 +24,7 @@ const Header = () => {
                 <CategoriesHeaderWidget categories={categories} />
                 <span className='sm:contents'>
                     <SearchHeaderWidget />
-                </span>transition duration-400
+                </span>
                 <span>
                     <a href="https://www.linkedin.com/in/alex-sikorski-541249182/" target="_blank" className="float-right mt-2 lg:ml-4 ml-2 align-middle text-white hover:text-amber-500 transition duration-400 hover:cursor-pointer transform hover:-translate-y-1 hover:text-amber-500">
                         <svg xmlns="http://www.w3.org/2000/svg"
