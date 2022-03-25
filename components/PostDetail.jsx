@@ -50,7 +50,7 @@ const PostDetail = ({ post }) => {
       case 'heading-three':
         return <h3 key={index} className="text-xl text-amber-500 font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
       case 'paragraph':
-        return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
+        return <p key={index} className="mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
       case 'heading-four':
         return <h4 key={index} className="text-md text-amber-500 font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
       case 'image':
@@ -69,7 +69,7 @@ const PostDetail = ({ post }) => {
     }
   };
 
-  return <div className='text-neutral-200 bg-lighter-washed-black shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
+  return <div className='text-neutral-200 bg-lighter-washed-black shadow-lg rounded-lg lg:p-8 pb-12 mb-4'>
     <div className='relative overflow-hidden shadow-md mb-6'>
       <img
         src={post.featuredImage.url}
@@ -78,7 +78,7 @@ const PostDetail = ({ post }) => {
       />
     </div>
     <div className='px-4 lg:px-0'>
-      <div className='flex items-center mb-8 w-full'>
+      <div className='flex items-center mb-4 w-full'>
         <div className='flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8'>
           <img
             alt={post.author.name}
@@ -100,7 +100,7 @@ const PostDetail = ({ post }) => {
         </div>
       </div>
 
-      <h1 className='mb-8 text-3xl text-amber-500 font-semibold'>{post.title}</h1>
+      <h1 className='mb-4 text-3xl text-amber-500 font-semibold'>{post.title}</h1>
 
       {post.content.raw.children.map((typeObj, index) => {
         const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item));

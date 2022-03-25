@@ -3,19 +3,22 @@ import Image from 'next/image';
 
 
 const Author = ({ author }) => {
-  return <div className='text-center mt-20 mb-8 p-12 relative rounded-lg bg-white/[.045]'>
-    <div className='absolute left-0 right-0 -top-14'>
-      <Image
+  return <div className='flex grid grid-cols-5 text-left mb-4 p-6 relative rounded-lg bg-white/[.045]'>
+    <div className='m-auto '>
+      <img
         alt={author.name}
         unoptimized
         height='100px'
         width='100px'
-        className='align-middle rounded-full shadow-lg'
+        className=' rounded-full shadow-lg'
         src={author.photo.url}
       />
     </div>
-    <h3 className='text-white my-4 text-xl font-bold'>{author.name}</h3>
+    <div className='col-span-4 my-4 ml-4'>
+    <h3 className='text-white  text-xl font-bold'>{author.name}</h3>
     <p className='text-white text-lg'>{author.bio}</p>
+    </div>
+
   </div>;
 };
 

@@ -47,8 +47,8 @@ const CommentsForm = ({ slug }) => {
             })
     }
 
-    return <div className='bg-lighter-washed-black shadow-lg rounded-lg p-8 pb-12 mb-8'>
-        <h3 className='text-white text-xl mb-8 font-semibold border-b pb-4 border-white/5'>
+    return <div className='bg-lighter-washed-black shadow-lg rounded-lg p-8 pb-12 mb-4'>
+        <h3 className='text-white text-xl mb-4 font-semibold border-b pb-4 border-white/5'>
             Leave a comment
         </h3>
         <div className='grid grid-cols-1 gap-4 mb-4'>
