@@ -5,7 +5,7 @@ import { FeaturedPosts } from '../sections';
 
 export default function Home({ posts }) {
 
-  return <div className='container mx-auto px-24 mb-8'>
+  return <div className='container mx-auto lg:lg:px-24 px-5 px-5 mb-8'>
     <Head>
       <title>Alex Sikorski</title>
       <link rel='icon' href='/favicon.ico' />

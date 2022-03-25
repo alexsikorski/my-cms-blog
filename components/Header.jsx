@@ -10,7 +10,7 @@ const Header = () => {
             .then((newCategories) => setCategories(newCategories))
     }, []);
 
-    return <div className='container mx-auto px-24 mb-4 select-none'>
+    return <div className='container mx-auto lg:px-24 px-5 mb-4 select-none'>
         <div className='border-b w-full inline-block border-white/5 py-2'>
             <div className='md:float-left block
             transition duration-400 transform hover:-translate-y-1 '>
