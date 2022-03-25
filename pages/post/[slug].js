@@ -12,7 +12,7 @@ const PostDetails = ({ post }) => {
     return (
         <>
             <div className='container mx-auto px-24 mb-4'>
-                <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-12'>
+                <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-4'>
                     <div className='col-span-1 lg:col-span-8'>
                         <PostDetail post={post} />
                         <Author author={post.author} />
