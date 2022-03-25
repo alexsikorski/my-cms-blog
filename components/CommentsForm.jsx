@@ -91,7 +91,7 @@ const CommentsForm = ({ slug }) => {
         {error && <p className='text-xs text-red-500'>All fields are required!</p>}
         <div className='mt-8'>
             <button
-                className='transition duration-500 ease transform hover:-translate-y-1 inline-block bg-amber-500 text-lg rounded-full text-white px-8 py-3 cursor-pointer'
+                className='transition duration-400 ease transform hover:-translate-y-1 inline-block bg-amber-500 text-lg rounded-full text-white px-8 py-3 cursor-pointer'
                 type='button'
                 onClick={handleCommentSubmission}>
                 Post Comment

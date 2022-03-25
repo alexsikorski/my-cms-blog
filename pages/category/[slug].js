@@ -24,7 +24,7 @@ const CategoryPost = ({ posts }) => {
                             <span className="text-center text-xl"> posts!</span>
                         </div>
                         <Link href='/'>
-                            <a className="transition duration-500 transform hover:-translate-y-1 inline-block bg-amber-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
+                            <a className="transition duration-400 transform hover:-translate-y-1 inline-block bg-amber-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
                                 Return Home</a>
                         </Link>
                     </div>
