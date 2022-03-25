@@ -12,3 +12,4 @@ export { default as Loader } from './Loader';
 export { default as AdjacentPostCard } from './AdjacentPostCard';
 export { default as BgParticles } from './BgParticles';
 export { default as SearchHeaderWidget } from './SearchHeaderWidget';
+export { default as CategoriesHeaderWidget } from './CategoriesHeaderWidget';

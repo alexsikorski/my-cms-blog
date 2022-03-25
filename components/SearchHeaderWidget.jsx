@@ -31,12 +31,12 @@ const SearchHeaderWidget = () => {
                 id='searchInput'
                 ref={searchEl}
                 type='text'
-                className='pl-2 pr-4 md:ml-6 outline-none w-full rounded-l-lg  bg-gray-100 text-gray-700 drop-shadow w-28'
+                className='pl-2 pr-4 md:ml-4 outline-none w-full rounded-l-lg  bg-gray-100 text-gray-700 drop-shadow w-28'
                 placeholder='Search'
                 name='search'
             />
             <button
-                className='md:ml-12 md:mr-0 ml-6 mr-6 inline-block bg-amber-500 rounded-r-lg text-white cursor-pointer drop-shadow'
+                className='md:ml-10 md:mr-2 ml-6 mr-6 inline-block bg-amber-500 rounded-r-lg text-white cursor-pointer drop-shadow'
                 type='submit'
                 onClick={handleSearch}
             >
