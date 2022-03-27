@@ -96,8 +96,16 @@ const CommentsForm = ({ slug }) => {
                 onClick={handleCommentSubmission}>
                 Post Comment
             </button>
-            {showSuccessMessage && <span className='float-right font-semibold px-8 py-3 bg-green-500 text-white rounded-full'>Comment Submitted for review!</span>}
+            {showSuccessMessage &&
+                <div class="text-center pt-4 lg:px-4">
+                    <div class="p-2 bg-green-600 items-center text-green-100 leading-none rounded-full flex inline-flex">
+                        <span class="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Success</span>
+                        <span class="font-semibold mr-2 text-left flex-auto">Comment Submitted for review!</span>
+                    </div>
+                </div>
+            }
         </div>
+
     </div>;
 }
 
