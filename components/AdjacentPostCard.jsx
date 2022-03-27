@@ -14,8 +14,8 @@ const AdjacentPostCard = ({ post, position }) => (
         {position === 'LEFT' && (
             <div className="absolute arrow-btn bottom-5 cursor-pointer right-4">
                 <button className="bg-amber-500 py-2 px-4 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-4 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                     </svg>
                 </button>
 
@@ -24,8 +24,8 @@ const AdjacentPostCard = ({ post, position }) => (
         {position === 'RIGHT' && (
             <div className="absolute arrow-btn bottom-5 cursor-pointer right-4">
                 <button className="bg-amber-500 py-2 px-4 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-4 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </button>
 

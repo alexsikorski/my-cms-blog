@@ -39,7 +39,7 @@ const Categories = () => {
 
     return (<>
         <div className='bg-lighter-washed-black shadow-lg rounded-lg p-8 mb-8 pb-12'>
-            <h3 className='text-xl text-white mb-4 font-semibold border-b border-white/5 pb-4'>
+            <h3 className='text-xl text-white mb-2 font-semibold border-b border-white/5 pb-2'>
                 Categories
             </h3>
             {categories.map((category) => (

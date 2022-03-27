@@ -43,8 +43,8 @@ const PostCard = ({ post }) => {
                         <Link href={`/post/${post.slug}`}>
                             <div className='p-1 transition duration-400 transform hover:-translate-x-1 bg-amber-500
                                 rounded-full text-white cursor-pointer w-16'>
-                                <svg xmlns="http://www.w3.org/2000/svg" height='20' width='20' className='m-auto' fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                <svg xmlns="http://www.w3.org/2000/svg" height='22' width='16' className='m-auto' fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </div>
 
