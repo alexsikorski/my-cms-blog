@@ -38,9 +38,9 @@ const FeaturedPosts = () => {
     const ArrowLeft = (arrowProps) => {
         const { carouselState, children, ...restArrowProps } = arrowProps;
         return (
-            <div {...restArrowProps} className='select-none absolute left-0 cursor-pointer bg-amber-500 py-3 px-4 rounded-full'>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            <div {...restArrowProps} className='select-none absolute left-0 cursor-pointer bg-amber-500 py-3 px-4 rounded-r-lg'>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-4 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
                 {children}
             </div>
@@ -50,9 +50,9 @@ const FeaturedPosts = () => {
     const ArrowRight = (arrowProps) => {
         const { carouselState, children, ...restArrowProps } = arrowProps;
         return (
-            <div {...restArrowProps} className='select-none absolute right-0 cursor-pointer bg-amber-500 py-3 px-4 rounded-full text-center'>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <div {...restArrowProps} className='select-none absolute right-0 cursor-pointer bg-amber-500 py-3 px-4 rounded-l-lg'>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-4 text-white w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
                 {children}
             </div>

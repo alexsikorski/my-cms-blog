@@ -6,7 +6,7 @@ function Custom404() {
         <div className='container mx-auto lg:px-24 px-5 mb-4'>
             <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-4'>
                 <div className='lg:col-span-8 col-span-1'>
-                    <div className="col-span-1 lg:col-span-8 bg-lighter-washed-black rounded-md p-8 text-center">
+                    <div className="col-span-1 lg:col-span-8 bg-lighter-washed-black rounded-md p-8 text-center mb-4">
                         <div className='mb-4 text-white'>
                             <span className="text-center text-3xl font-semibold">404</span>
                             <span className="text-center text-xl"> Not found!</span>
