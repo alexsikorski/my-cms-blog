@@ -18,7 +18,7 @@ function Custom404() {
                     </div>
                 </div>
                 <div className='lg:col-span-4 col-span-1'>
-                    <div className='lg:sticky relative '>
+                    <div className='lg:sticky relative lg:top-4'>
                         <PostWidget/>
                         <Categories/>
                     </div>

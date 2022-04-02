@@ -4,7 +4,7 @@ import {getPosts} from '../services';
 
 export default function Home({posts}) {
 
-    return <div className='container mx-auto lg:lg:px-24 px-5 px-5 mb-8'>
+    return <div className='container mx-auto lg:px-24 px-5 px-5 mb-4'>
         <Head>
             <title>Alex Sikorski</title>
             <link rel='icon' href='/favicon.ico'/>
@@ -17,7 +17,7 @@ export default function Home({posts}) {
                 ))}
             </div>
             <div className='lg:col-span-4 col-span-1'>
-                <div className='lg:sticky relative lg:top-2'>
+                <div className='lg:sticky relative lg:top-4'>
                     <PostWidget/>
                     <Categories/>
                 </div>

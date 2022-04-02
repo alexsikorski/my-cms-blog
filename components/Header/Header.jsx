@@ -14,7 +14,7 @@ const Header = () => {
         <div className='border-b w-full inline-block border-white/5 py-2'>
             <div className='md:float-left block
             transition duration-400 transform hover:-translate-y-1 '>
-                <Link href='/pages'>
+                <Link href='/'>
                     <span className='cursor-pointer font-bold text-2xl lg:text-4xl text-white'>
                         Alex Sikorski<span className=' text-amber-500'>.net</span>
                     </span>

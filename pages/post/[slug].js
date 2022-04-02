@@ -19,9 +19,9 @@ const PostDetails = ({post}) => {
                         <CommentsForm slug={post.slug}/>
                         <Comments slug={post.slug}/>
                     </div>
-                    <div className='col-span-1 lg:col-span-4 mb-4'>
-                        <div className='relative lg:sticky '>
-                            <PostWidget slug={post.slug} categories={post.categories.map((category) => category.slug)}/>
+                    <div className='lg:col-span-4 col-span-1'>
+                        <div className='lg:sticky relative lg:top-4'>
+                            <PostWidget/>
                             <Categories/>
                         </div>
                     </div>
