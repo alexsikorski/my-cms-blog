@@ -47,8 +47,8 @@ const CommentsForm = ({slug}) => {
             })
     }
 
-    return <div className='bg-lighter-washed-black shadow-lg rounded-lg p-8 pb-12 mb-4'>
-        <h3 className='text-white text-xl mb-4 font-semibold border-b pb-4 border-white/5'>
+    return <div className='bg-lighter-washed-black shadow-lg rounded-lg p-8 mb-4'>
+        <h3 className='text-white text-xl mb-2 font-semibold border-b pb-2 border-white/5'>
             Leave a comment
         </h3>
         <div className='grid grid-cols-1 gap-4 mb-4'>
@@ -89,9 +89,9 @@ const CommentsForm = ({slug}) => {
             </div>
         </div>
         {error && <p className='text-xs text-red-500'>All fields are required!</p>}
-        <div className='mt-8'>
+        <div className='mt-4'>
             <button
-                className='transition duration-400 ease transform hover:-translate-y-1 inline-block bg-amber-500 text-lg rounded-full text-white px-8 py-3 cursor-pointer'
+                className='transition duration-400 ease transform hover:-translate-y-1 inline-block bg-amber-500 text-lg rounded-full text-white px-8 py-3 cursor-pointer font-medium'
                 type='button'
                 onClick={handleCommentSubmission}>
                 Post Comment

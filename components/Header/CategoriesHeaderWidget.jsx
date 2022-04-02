@@ -3,7 +3,7 @@ import {Menu, Transition} from '@headlessui/react'
 import Link from 'next/link'
 
 function returnBorderedItem(categories, category, itemCount) {
-    return categories.length - 1 == itemCount ?
+    return categories.length - 1 === itemCount ?
 
         <span className='hover:text-amber-500 text-white block py-2 text-sm cursor-pointer
                                         transition duration-400'>
@@ -19,7 +19,7 @@ function returnBorderedItem(categories, category, itemCount) {
 }
 
 const CategoriesHeaderWidget = ({categories}) => {
-    const itemCount = 0;
+    let itemCount = 0;
     return (
         <Menu as="span" className="ml-2 md:ml-1 mt-2 float-right lg:float-left lg:invisible relative">
             <div>
