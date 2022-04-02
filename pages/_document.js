@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, {Head, Html, Main, NextScript} from 'next/document';
 
 function logit() {
     console.log('yeppers');
@@ -7,7 +7,7 @@ function logit() {
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx);
-        return { ...initialProps };
+        return {...initialProps};
     }
 
     render() {
@@ -17,8 +17,8 @@ class MyDocument extends Document {
                     {/* <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1" /> */}
                 </Head>
                 <body>
-                    <Main />
-                    <NextScript />
+                <Main/>
+                <NextScript/>
                 </body>
             </Html>
         );

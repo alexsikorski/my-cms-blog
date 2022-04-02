@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { submitComment } from '../services';
+import React, {useEffect, useRef, useState} from 'react';
+import {submitComment} from '../../services';
 
-const CommentsForm = ({ slug }) => {
+const CommentsForm = ({slug}) => {
     const [error, setError] = useState(false);
     const [localStorage, setLocalStorage] = useState(null);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -18,17 +18,17 @@ const CommentsForm = ({ slug }) => {
     const handleCommentSubmission = () => {
         setError(false);
 
-        const { value: comment } = commentEl.current;
-        const { value: name } = nameEl.current;
-        const { value: email } = emailEl.current;
-        const { checked: storeData } = storeDataEl.current;
+        const {value: comment} = commentEl.current;
+        const {value: name} = nameEl.current;
+        const {value: email} = emailEl.current;
+        const {checked: storeData} = storeDataEl.current;
 
         if (!comment || !name || !email) {
             setError(true);
             return;
         }
 
-        const commentObj = { name, email, comment, slug };
+        const commentObj = {name, email, comment, slug};
 
         if (storeData) {
             window.localStorage.setItem('name', name);
@@ -98,8 +98,10 @@ const CommentsForm = ({ slug }) => {
             </button>
             {showSuccessMessage &&
                 <div class="text-center pt-4 lg:px-4">
-                    <div class="p-2 bg-green-600 items-center text-green-100 leading-none rounded-full flex inline-flex">
-                        <span class="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Success</span>
+                    <div
+                        class="p-2 bg-green-600 items-center text-green-100 leading-none rounded-full flex inline-flex">
+                        <span
+                            class="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Success</span>
                         <span class="font-semibold mr-2 text-left flex-auto">Comment Submitted for review!</span>
                     </div>
                 </div>

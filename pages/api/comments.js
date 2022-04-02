@@ -1,9 +1,9 @@
-import { GraphQLClient, gql } from "graphql-request";
+import {gql, GraphQLClient} from "graphql-request";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 
 export default async function comments(req, res) {
-    const { name, email, slug, comment } = req.body;
+    const {name, email, slug, comment} = req.body;
 
     const graphQLClient = new GraphQLClient(graphqlAPI, {
         headers: {

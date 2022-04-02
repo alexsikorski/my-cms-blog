@@ -1,4 +1,4 @@
-import { Categories, PostWidget } from '../components';
+import {Categories, PostWidget} from '../components';
 import Link from 'next/link';
 
 function Custom404() {
@@ -19,8 +19,8 @@ function Custom404() {
                 </div>
                 <div className='lg:col-span-4 col-span-1'>
                     <div className='lg:sticky relative '>
-                        <PostWidget />
-                        <Categories />
+                        <PostWidget/>
+                        <Categories/>
                     </div>
                 </div>
             </div>

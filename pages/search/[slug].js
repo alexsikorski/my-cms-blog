@@ -1,12 +1,12 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 
-import { getSearchedPosts } from '../../services';
-import { PostCard, Categories, PostWidget } from '../../components';
+import {getSearchedPosts} from '../../services';
+import {Categories, PostCard, PostWidget} from '../../components';
 import Link from 'next/link';
 
 
-const SearchPost = ({ posts }) => {
+const SearchPost = ({posts}) => {
     const router = useRouter();
 
     if (router.isFallback) {
@@ -30,8 +30,8 @@ const SearchPost = ({ posts }) => {
                 </div>
                 <div className='lg:col-span-4 col-span-1'>
                     <div className='lg:sticky relative '>
-                        <PostWidget />
-                        <Categories />
+                        <PostWidget/>
+                        <Categories/>
                     </div>
                 </div>
             </div>
@@ -41,13 +41,13 @@ const SearchPost = ({ posts }) => {
             <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-4'>
                 <div className='lg:col-span-8 col-span-1'>
                     {posts.map((post, index) => (
-                        <PostCard key={index} post={post.node} />
+                        <PostCard key={index} post={post.node}/>
                     ))}
                 </div>
                 <div className='lg:col-span-4 col-span-1'>
                     <div className='lg:sticky relative '>
-                        <PostWidget />
-                        <Categories />
+                        <PostWidget/>
+                        <Categories/>
                     </div>
                 </div>
             </div>
@@ -55,13 +55,13 @@ const SearchPost = ({ posts }) => {
 };
 export default SearchPost;
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({params}) {
     const titleContains = params.slug.replace(/-/g, ' ');
 
     const posts = await getSearchedPosts(titleContains);
 
     return {
-        props: { posts },
+        props: {posts},
     };
 }
 

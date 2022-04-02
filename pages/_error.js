@@ -1,7 +1,7 @@
-import { Categories, PostWidget } from '../components';
+import {Categories, PostWidget} from '../components';
 import Link from 'next/link';
 
-function Error({ statusCode }) {
+function Error({statusCode}) {
     return (
         <div className='container mx-auto lg:px-24 px-5 mb-4'>
             <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-4'>
@@ -19,8 +19,8 @@ function Error({ statusCode }) {
                 </div>
                 <div className='lg:col-span-4 col-span-1'>
                     <div className='lg:sticky relative '>
-                        <PostWidget />
-                        <Categories />
+                        <PostWidget/>
+                        <Categories/>
                     </div>
                 </div>
             </div>
@@ -28,9 +28,9 @@ function Error({ statusCode }) {
     )
 }
 
-Error.getInitialProps = ({ res, err }) => {
+Error.getInitialProps = ({res, err}) => {
     const statusCode = res ? res.statusCode : err ? err.statusCode : 404
-    return { statusCode }
+    return {statusCode}
 }
 
 export default Error

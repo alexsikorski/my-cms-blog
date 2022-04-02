@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Link from 'next/link';
 
-const PostCard = ({ post }) => {
+const PostCard = ({post}) => {
     return (
         <div className='bg-lighter-washed-black shadow-lg rounded-lg mb-4 text-white'>
             <div className='relative overflow-hidden shadow-md pb-60'>
@@ -43,8 +43,10 @@ const PostCard = ({ post }) => {
                         <Link href={`/post/${post.slug}`}>
                             <div className='p-1 transition duration-400 transform hover:-translate-x-1 bg-amber-500
                                 rounded-full text-white cursor-pointer w-16'>
-                                <svg xmlns="http://www.w3.org/2000/svg" height='22' width='16' className='m-auto' fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                <svg xmlns="http://www.w3.org/2000/svg" height='22' width='16' className='m-auto'
+                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"
+                                          d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                                 </svg>
                             </div>
 
