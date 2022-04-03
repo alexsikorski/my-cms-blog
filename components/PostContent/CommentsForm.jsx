@@ -47,7 +47,7 @@ const CommentsForm = ({slug}) => {
             })
     }
 
-    return <div className='bg-lighter-washed-black shadow-lg rounded-lg p-8 mb-4'>
+    return <div className='relative bg-lighter-washed-black shadow-lg rounded-lg p-8 mb-4'>
         <h3 className='text-white text-xl mb-2 font-semibold border-b pb-2 border-white/5'>
             Leave a comment
         </h3>
@@ -75,6 +75,12 @@ const CommentsForm = ({slug}) => {
                 name='email'
             />
         </div>
+        <button
+            className='absolute right-8 transition duration-400 ease transform hover:-translate-x-1 inline-block bg-amber-500 text-lg rounded-full text-white px-8 py-1 cursor-pointer font-medium'
+            type='button'
+            onClick={handleCommentSubmission}>
+            Post
+        </button>
         <div className='grid grid-cols-1 gap-4 mb-4'>
             <div>
                 <input
@@ -83,26 +89,21 @@ const CommentsForm = ({slug}) => {
                     id='storeData'
                     value='true'
                 />
-                <label className='font-normal text-neutral-400 cursor-pointer ml-2' htmlFor='storeData'>
-                    Save my email and name for next time.
+                <label className='font-normal text-neutral-400 cursor-pointer ml-2 text-s' htmlFor='storeData'>
+                    Save my details.
                 </label>
             </div>
         </div>
         {error && <p className='text-xs text-red-500'>All fields are required!</p>}
+
         <div className='mt-4'>
-            <button
-                className='transition duration-400 ease transform hover:-translate-y-1 inline-block bg-amber-500 text-lg rounded-full text-white px-8 py-3 cursor-pointer font-medium'
-                type='button'
-                onClick={handleCommentSubmission}>
-                Post Comment
-            </button>
             {showSuccessMessage &&
-                <div class="text-center pt-4 lg:px-4">
+                <div className="text-center pt-4 lg:px-4">
                     <div
-                        class="p-2 bg-green-600 items-center text-green-100 leading-none rounded-full flex inline-flex">
+                        className="p-2 bg-green-600 items-center text-green-100 leading-none rounded-full flex inline-flex">
                         <span
-                            class="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Success</span>
-                        <span class="font-semibold mr-2 text-left flex-auto">Comment Submitted for review!</span>
+                            className="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Success</span>
+                        <span className="font-semibold mr-2 text-left flex-auto">Comment Submitted for review!</span>
                     </div>
                 </div>
             }

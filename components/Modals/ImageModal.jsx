@@ -52,7 +52,7 @@ const ImageModal = ({obj, index}) => {
                                 <div className="sm:flex sm:items-start">
                                     <button
                                         type="button"
-                                        className="cursor-pointer absolute text-white/10 bg-amber-500/10 rounded-lg px-3 right-0 mr-5 mt-5 transition duration-200 hover:text-white hover:bg-amber-500"
+                                        className="absolute text-white/10 bg-amber-500/10 rounded-lg px-3 right-0 mr-5 mt-5 transition duration-200 hover:text-white hover:bg-amber-500 focus:outline-none"
                                         onClick={() => setOpen(false)}
                                         ref={closeButtonRef}
                                     >
