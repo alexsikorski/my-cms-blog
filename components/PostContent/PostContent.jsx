@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import {ImageModel} from "../index";
 
 function copyToClipBoard(id) {
     const element = document.getElementById(id);
@@ -62,14 +63,7 @@ const PostContent = ({post}) => {
                            className="text-md text-amber-500 font-semibold mb-4">{modifiedText.map((item, i) =>
                     <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
             case 'image':
-                return (<img
-                    key={index}
-                    alt={obj.title}
-                    height={obj.height}
-                    width={obj.width}
-                    src={obj.src}
-                    className='h-full w-full shadow-lg rounded-lg lg:rounded-lg'
-                />);
+                return (<ImageModel index={index} obj={obj}/>);
             default:
                 return modifiedText;
         }
@@ -83,7 +77,7 @@ const PostContent = ({post}) => {
                 className='object-top h-full w-full rounded-t-lg'
             />
         </div>
-        <div className='text-neutral-200 lg:p-8 mb-4'>
+        <div className='text-neutral-200 lg:p-8 p-4 mb-4'>
             <div className='px-4 lg:px-0'>
                 <div className='flex items-center mb-4 w-full'>
                     <div className='flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8'>

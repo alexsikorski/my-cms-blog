@@ -14,3 +14,4 @@ export {default as SearchHeaderWidget} from './Header/SearchHeaderWidget';
 export {default as CategoriesHeaderWidget} from './Header/CategoriesHeaderWidget';
 export {default as FeaturedPosts} from './Carousel/FeaturedPosts';
 export {default as AdjacentPosts} from './PostContent/AdjacentPosts/AdjacentPosts';
+export {default as ImageModel} from './Modals/ImageModal';
