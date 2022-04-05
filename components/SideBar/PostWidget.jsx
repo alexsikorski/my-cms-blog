@@ -27,10 +27,10 @@ const PostWidget = ({categories, slug}) => {
                     <div key={post.title} className='flex items-center w-full mb-2
                     transition duration-400 text-neutral-200 font-medium hover:text-amber-500
                     cursor-pointer'>
-                        <div className='flex-none'>
+                        <div className='flex-none '>
                             <img
                                 alt={post.title}
-                                className='circular-landscape'
+                                className='circular-landscape bg-center bg-gradient-to-b opacity-60 from-gray-400 via-gray-700 to-black'
                                 src={post.featuredImage.url}
                             />
                         </div>

@@ -20,13 +20,13 @@ const AdjacentPosts = ({createdAt, slug}) => {
                 <>
                     {adjacentPost.previous && (
                         <div
-                            className={`${adjacentPost.next ? 'col-span-1 lg:col-span-4 mb-4' : 'col-span-1 lg:col-span-8'} adjacent-post rounded-lg relative h-72`}>
+                            className={`${adjacentPost.next ? 'col-span-1 lg:col-span-4 mb-4' : 'col-span-1 lg:col-span-8'} adjacent-post rounded-lg relative h-52`}>
                             <AdjacentPostCard post={adjacentPost.previous} position="LEFT"/>
                         </div>
                     )}
                     {adjacentPost.next && (
                         <div
-                            className={`${adjacentPost.previous ? 'col-span-1 lg:col-span-4' : 'col-span-1 lg:col-span-8'} adjacent-post rounded-lg relative h-72`}>
+                            className={`${adjacentPost.previous ? 'col-span-1 lg:col-span-4' : 'col-span-1 lg:col-span-8'} adjacent-post rounded-lg relative h-52`}>
                             <AdjacentPostCard post={adjacentPost.next} position="RIGHT"/>
                         </div>
                     )}

@@ -76,7 +76,7 @@ const CommentsForm = ({slug}) => {
             />
         </div>
         <button
-            className='absolute right-8 transition duration-400 ease transform hover:-translate-x-1 inline-block bg-amber-500 text-lg rounded-full text-white px-8 py-1 cursor-pointer font-medium'
+            className='absolute right-8 transition duration-400 ease transform hover:-translate-x-1 inline-block bg-amber-500 text-lg rounded-lg text-white px-8 py-1 cursor-pointer font-medium'
             type='button'
             onClick={handleCommentSubmission}>
             Post

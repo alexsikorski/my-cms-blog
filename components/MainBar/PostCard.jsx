@@ -12,7 +12,7 @@ const PostCard = ({post}) => {
                     className='object-top absolute h-60 w-full object-cover shadow-lg rounded-t-lg '
                 />
             </div>
-            <div className='lg:p-10 md:p-10 p-4 '>
+            <div className='lg:p-10 md:p-10 p-4'>
                 <h1 className='inline-block transition duration-400 text-left mb-4 cursor:pointer
                  hover:text-amber-500 text-3xl font-semibold'>
                     <Link href={`/post/${post.slug}`}>
@@ -42,7 +42,7 @@ const PostCard = ({post}) => {
                     <span className='align-middle'>
                         <Link href={`/post/${post.slug}`}>
                             <div className='p-1 transition duration-400 transform hover:-translate-x-1 bg-amber-500
-                                rounded-full text-white cursor-pointer w-16'>
+                                rounded-lg shadow-lg text-white cursor-pointer w-16'>
                                 <svg xmlns="http://www.w3.org/2000/svg" height='22' width='16' className='m-auto'
                                      fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"
