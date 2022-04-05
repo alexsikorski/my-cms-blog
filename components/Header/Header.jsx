@@ -10,7 +10,7 @@ const Header = () => {
             .then((newCategories) => setCategories(newCategories))
     }, []);
 
-    return <div className='container mx-auto lg:px-24 px-5 mb-4 select-none'>
+    return <div className='container mx-auto lg:px-24 px-5 mb-2 select-none'>
         <div className='border-b w-full inline-block border-white/5 py-2'>
             <div className='md:float-left block
             transition duration-400 transform hover:-translate-y-1 '>
@@ -26,7 +26,7 @@ const Header = () => {
                     <SearchHeaderWidget/>
                 </span>
                 <span>
-                    <a href="components/Header/Header" target="_blank"
+                    <a href="https://www.linkedin.com/in/alex-sikorski-541249182" target="_blank"
                        className="float-right mt-2 lg:ml-4 ml-2 align-middle text-white hover:text-amber-500 transition duration-400 hover:cursor-pointer transform hover:-translate-y-1 hover:text-amber-500">
                         <svg xmlns="http://www.w3.org/2000/svg"
                              fill="currentColor" viewBox="0 0 30 30" width="25" height="25">
