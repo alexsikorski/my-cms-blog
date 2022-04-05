@@ -8,7 +8,6 @@ const Comments = ({slug}) => {
     const [comments, setComments] = useState([]);
 
     function returnComment(comment, index) {
-        console.log(comments.length)
         return index === comments.length - 1 ? <div key={index} className="pb-4">
                 <p>
                     <span className="text-amber-500 font-bold">{comment.name}</span>
