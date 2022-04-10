@@ -41,10 +41,17 @@ const PostContent = ({post}) => {
             case 'code-block':
                 return <code id={index} key={index}
                              className='text-sm relative multiline-text block overflow-x-auto p-2 border-2 border-leetcode-black bg-code-black text-neutral-200 mb-4 rounded-md'>
-                    <span className='absolute right-2 transition duration-400 transform hover:-translate-x-1 hover:bg-amber-500 hover:text-white inline-block bg-neutral-500/25 text-white/50
-                                    text-lg font-medium rounded-lg text-white px-5 cursor-pointer select-none'
-                          onClick={() => copyToClipBoard(index)}
-                    >Copy
+                    <span className='absolute right-2 transition duration-400 transform hover:-translate-x-1 hover:bg-amber-500 hover:text-white inline-block text-leetcode-black
+                                    text-lg font-medium rounded-lg text-white py-1 px-3 cursor-pointer select-none'
+                          onClick={() => copyToClipBoard(index)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round"
+                             strokeLinejoin="round">
+                           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                           <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+                           <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
+                        </svg>
+
                     </span>
                     <SyntaxHighlighter language={post.codeBlockType} style={CodeBlockStyle}>{text}</SyntaxHighlighter>
                 </code>
@@ -93,7 +100,7 @@ const PostContent = ({post}) => {
                             {post.author.name}</p>
                     </div>
                     <div className='font-normal text-neutral-400 text-right'>
-                        <svg xmlns='http://www.w3.org/2000/svg' className='h-5 w-5 inline mr-2 text-amber-500'
+                        <svg xmlns='http://www.w3.org/2000/svg' className='h-5 w-5 inline mr-2 text-neutral-400'
                              fill='none'
                              viewBox='0 0 24 24' stroke='currentColor'>
                             <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2'
