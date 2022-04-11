@@ -1,5 +1,6 @@
 import {Categories, PostWidget} from '../components';
 import Link from 'next/link';
+import React from "react";
 
 function Custom404() {
     return (
@@ -7,14 +8,22 @@ function Custom404() {
             <div className='grid grid-cols-1 lg:grid-cols-12 gap-x-4'>
                 <div className='lg:col-span-8 col-span-1'>
                     <div className="col-span-1 lg:col-span-8 bg-lighter-washed-black rounded-md p-8 text-center mb-4">
-                        <div className='mb-4 text-white'>
-                            <span className="text-center text-3xl font-semibold">404</span>
-                            <span className="text-center text-xl"> Not found!</span>
+                        <div className="text-neutral-400 border-2 border-leetcode-black bg-code-black rounded-lg p-4">
+                            <div className="mb-2 items-center">
+                                <span className="text-white text-center text-2xl font-semibold">404 Not Found</span>
+                            </div>
+                            <div className="mb-4">
+                                <span>Uh oh... can't find the page that you're looking for!</span>
+                            </div>
+
+                            <div>
+                                <Link href='/'>
+                                    <a className="transition duration-400 transform hover:-translate-y-1 inline-block bg-amber-500 text-lg font-medium rounded-lg text-white px-5 py-2 cursor-pointer">
+                                        Return Home</a>
+                                </Link>
+                            </div>
+
                         </div>
-                        <Link href='/'>
-                            <a className="transition duration-400 transform hover:-translate-y-1 inline-block bg-amber-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
-                                Return Home</a>
-                        </Link>
                     </div>
                 </div>
                 <div className='lg:col-span-4 col-span-1'>
