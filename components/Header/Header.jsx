@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {CategoriesHeaderWidget, SearchHeaderWidget} from '../index';
 import Link from 'next/link'
-import {getCategories} from '../../services';
+import {getHeaderCategories} from '../../services';
 
 const Header = () => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        getCategories()
+        getHeaderCategories()
             .then((newCategories) => setCategories(newCategories))
     }, []);
 
