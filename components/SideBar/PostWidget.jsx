@@ -24,20 +24,20 @@ const PostWidget = ({categories, slug}) => {
             </h3>
             {relatedPosts.map((post) => (
                 <Link href={`/post/${post.slug}`} key={post.title}>
-                    <div key={post.title} className='w-full mb-2 text-center
+                    <div key={post.title} className='group w-full mb-2 text-center
                     transition duration-400 text-neutral-200 font-medium hover:text-amber-500
                     cursor-pointer border-2 border-leetcode-black rounded-lg'>
                         <div>
                             <img
                                 alt={post.title}
-                                className='thumb rounded-t-lg'
+                                className='thumb rounded-t-lg opacity-50 transition group-hover:opacity-100'
                                 src={post.featuredImage.url}
                             />
                         </div>
                         <div className="bg-code-black rounded-b-lg p-2">
-                            <span className="text-sm">
+                            <a className="text-sm font-bold">
                                 {post.title}
-                            </span>
+                            </a>
                             <p className='text-xs font-normal text-neutral-400'>
                                 {moment(post.createdAt).format('MMM DD, YYYY')}
                             </p>

@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Author = ({author}) => {
-    return <div className='flex items-center mb-4 p-8 rounded-lg bg-white/[.045]'>
+    return <div className='flex items-center justify-center mb-4 p-8 rounded-lg bg-white/[.045]'>
         <div>
             <img
                 alt={author.name}

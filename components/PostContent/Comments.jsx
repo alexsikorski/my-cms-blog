@@ -5,6 +5,7 @@ import parse from 'html-react-parser';
 import {getComments} from '../../services';
 
 const Comments = ({slug}) => {
+
     const [comments, setComments] = useState([]);
 
     function returnComment(comment, index) {
@@ -36,7 +37,6 @@ const Comments = ({slug}) => {
                 </p>
                 <p className="whitespace-pre-line text-neutral-200 w-full">{parse(comment.comment)}</p>
             </div>
-
     }
 
     function pluralOrSingular(length) {
@@ -51,7 +51,7 @@ const Comments = ({slug}) => {
             setComments(result);
         });
     }, []);
-
+    
     return (<>
         {comments.length > 0 && (<div className="bg-lighter-washed-black shadow-lg rounded-lg p-8 mb-4 lg:mb-0">
             <h3 className="text-white text-xl mb-2 font-semibold border-b pb-2 border-white/5">
@@ -63,7 +63,5 @@ const Comments = ({slug}) => {
         </div>)}
     </>);
 };
-{
 
-}
 export default Comments;

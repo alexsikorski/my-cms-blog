@@ -12,7 +12,7 @@ const AdjacentPostCard = ({post, position}) => (
             <p className="text-white text-shadow font-semibold text-xs">{moment(post.createdAt).format('MMM DD, YYYY')}</p>
             <p className="text-white text-shadow font-semibold text-2xl text-center">{post.title}</p>
         </div>
-        <Link href={`/post/${post.slug}`}><span className="z-10 cursor-pointer absolute w-full h-full"/></Link>
+        <Link key={`${position}-${post.slug}`} href={`/post/${post.slug}`}><span className="z-10 cursor-pointer absolute w-full h-full"/></Link>
         {position === 'LEFT' && (
             <div className="absolute arrow-btn bottom-5 cursor-pointer right-4">
                 <button className="bg-amber-500 py-2 px-4 rounded-lg">
