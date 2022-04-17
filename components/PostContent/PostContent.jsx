@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {ImageModel} from "../index";
+import {ImageModal} from "../index";
 import CodeBlockStyle from "./CodeBlockStyle";
 
 function copyToClipBoard(id) {
@@ -71,7 +71,7 @@ const PostContent = ({post}) => {
                            className="text-md text-amber-500 font-semibold mb-4">{modifiedText.map((item, i) =>
                     <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
             case 'image':
-                return (<ImageModel key={index} index={index} obj={obj}/>);
+                return (<ImageModal key={index} index={index} obj={obj}/>);
             default:
                 return modifiedText;
         }

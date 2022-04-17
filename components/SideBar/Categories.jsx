@@ -14,26 +14,26 @@ const Categories = () => {
         if (slug == 'leetcode-easy') return <span name='category' id={slug}
                                                   className={`cursor-pointer inline-block p-1
                 text-center text-[#07b87b] rounded-md bg-leetcode-black select-none transition
-                mr-1 mt-1 text-xs font-medium`}>
-            {name}
+                mr-1 mb-1 text-xs font-medium`}>
+            {"#" + name.toLowerCase()}
         </span>
         if (slug == 'leetcode-medium') return <span name='category' id={slug}
                                                     className={`cursor-pointer inline-block p-1    
                 text-center text-[#ffc01e] rounded-md bg-leetcode-black select-none
-                mr-1 mt-1 text-xs font-medium`}>
-            {name}
+                mr-1 mb-1 text-xs font-medium`}>
+            {"#" + name.toLowerCase()}
         </span>
         if (slug == 'leetcode-hard') return <span name='category' id={slug}
                                                   className={`cursor-pointer inline-block p-1
                 text-center text-[#ff375f] rounded-md bg-leetcode-black select-none
-                mr-1 mt-1 text-xs font-medium`}>
-            {name}
+                mr-1 mb-1 text-xs font-medium`}>
+            {"#" + name.toLowerCase()}
         </span>
         return <span name='category' id={slug}
                      className={`cursor-pointer inline-block p-1
                 text-center text-white rounded-md bg-amber-500 select-none
-                mr-1 mt-1 text-xs font-medium`}>
-            {name}
+                mr-1 mb-1 text-xs font-medium`}>
+            {"#" + name.toLowerCase()}
         </span>
     }
 
