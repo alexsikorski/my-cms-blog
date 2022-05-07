@@ -31,7 +31,7 @@ const SearchHeaderWidget = () => {
                     id='searchInput'
                     ref={searchEl}
                     type='text'
-                    className='pl-2 pr-4 md:ml-4 outline-none w-full rounded-l-lg  bg-gray-100 text-gray-700 drop-shadow w-28'
+                    className='pl-2 pr-4 md:ml-2 outline-none w-full rounded-l-lg  bg-gray-100 text-gray-700 drop-shadow w-28'
                     placeholder='Search'
                     name='search'
                 />

@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'hover-hover': { 'raw': '(hover: hover)' }
+      },
       colors: {
         'washed-black': '#030303',
         'washed-black-bg': '#050505',

@@ -13,7 +13,7 @@ const Header = () => {
     return <div className='container mx-auto lg:px-24 px-5 mb-2 select-none'>
         <div className='border-b w-full inline-block border-white/5 py-2'>
             <div className='md:float-left block
-            transition duration-400 transform hover:-translate-y-1 '>
+            transition duration-400'>
                 <Link href='/'>
                     <a className='cursor-pointer font-bold text-2xl lg:text-4xl text-white'>
                         Alex Sikorski<span className=' text-amber-500'>.net</span>
@@ -27,7 +27,8 @@ const Header = () => {
                 </span>
                 <span>
                     <a href="https://www.linkedin.com/in/alex-sikorski-541249182" target="_blank"
-                       className="float-right mt-2 lg:ml-4 ml-2 align-middle text-white hover:text-amber-500 transition duration-400 hover:cursor-pointer transform hover:-translate-y-1 hover:text-amber-500">
+                    //  lg:ml-1 lg:p-2 lg:m-0 p-1 mt-1 ml-1
+                       className="float-right lg:p-2 lg:m-0 p-1 mt-1 align-middle text-white hover-hover:hover:text-amber-500 transition duration-400 hover-hover:hover:cursor-pointer hover-hover:hover:text-amber-500">
                         <svg xmlns="http://www.w3.org/2000/svg"
                              fill="currentColor" viewBox="0 0 30 30" width="25" height="25">
                             <path
@@ -37,7 +38,7 @@ const Header = () => {
                 </span>
                 <span>
                     <a href="https://github.com/alexsikorski" target="_blank"
-                       className="float-right mt-2 lg:ml-4 ml-2 align-middle text-white hover:text-amber-500 transition duration-400 hover:cursor-pointer transform hover:-translate-y-1 hover:text-amber-500">
+                       className="float-right lg:p-2 lg:m-0 p-1 mt-1 align-middle text-white hover-hover:hover:text-amber-500 transition duration-400 hover-hover:hover:cursor-pointer hover-hover:hover:text-amber-500">
                         <svg xmlns="http://www.w3.org/2000/svg"
                              fill="currentColor" viewBox="0 0 64 64" width="" height="25">
                             <path
@@ -49,8 +50,8 @@ const Header = () => {
                 <span className='hidden lg:float-left lg:contents'>
                     {categories.map((category) => (
                         <Link key={category.slug} href={`/category/${category.slug}`}>
-                            <a className='md:float-right mt-2 align-middle text-white text-sm ml-4 font-semibold cursor-pointer
-                         transition duration-400 transform hover:-translate-y-1 hover:text-amber-500'>
+                            <a className='md:float-right p-2 mt-0.5 align-middle text-white text-sm font-semibold cursor-pointer
+                         transition duration-400 hover-hover:hover:text-amber-500'>
                                 {category.name}
                             </a>
                         </Link>
