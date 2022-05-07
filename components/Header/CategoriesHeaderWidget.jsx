@@ -35,7 +35,7 @@ const CategoriesHeaderWidget = ({categories}) => {
         <Menu className="ml-2 md:ml-1 mt-2 float-right lg:float-left lg:invisible relative border-none focus:ring-0">
             <div>
                 <Menu.Button
-                    className="inline-block text-white hover:text-amber-500 transition duration-400">
+                    className="inline-block text-white hover-hover:hover:text-amber-500 transition duration-400">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                          viewBox="0 0 30 30">
                         <path
@@ -51,7 +51,7 @@ const CategoriesHeaderWidget = ({categories}) => {
                             leaveTo="transform opacity-0 scale-95">
 
                     <Menu.Items
-                        className="w-44 origin-top-right absolute right-0 mt-2 rounded-lg shadow-lg bg-lighter-washed-black z-10 font-medium p-4 text-left">
+                        className="w-44 origin-top-right absolute right-0 mt-2 rounded-lg shadow-lg bg-lighter-washed-black z-10 font-medium p-4 text-left border-none focus:ring-0">
                         <div className="py-1">
                             {categories.map((category) => (
                                 <Menu.Item key={`dropdown-${category.slug}`}>
