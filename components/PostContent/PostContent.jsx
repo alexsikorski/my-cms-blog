@@ -86,7 +86,7 @@ const PostContent = ({post}) => {
             />
         </div>
         <div className='text-neutral-200 lg:p-8 p-4 mb-4'>
-            <div className='px-4 lg:px-0'>
+            <div>
                 <div className='grid grid-cols-2 mb-4 w-full items-center'>
                     <div className='flex w-full'>
                         <img

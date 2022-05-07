@@ -38,7 +38,7 @@ const Categories = () => {
     }
 
     return (<>
-            <div className='bg-lighter-washed-black shadow-lg rounded-lg p-8'>
+            <div className='bg-lighter-washed-black shadow-lg rounded-lg lg:p-8 p-4'>
                 <h3 className='text-xl text-white mb-2 font-semibold border-b border-white/5 pb-2'>
                     Categories
                 </h3>

@@ -23,7 +23,7 @@ const PostCard = ({post}) => {
                 <p className='text-left text-lg text-neutral-200 font-medium  mb-4'>
                     {post.brief}
                 </p>
-                <div className='mt-4 mb-4 lg:mb-0 w-full h-full lg:w-auto flex'>
+                <div className='mt-4 lg:mb-0 w-full h-full lg:w-auto flex'>
                     <span className='flex-auto'>
                         <img
                             alt={post.author.name}

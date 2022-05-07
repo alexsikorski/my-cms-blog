@@ -1,8 +1,8 @@
-import React, {Fragment, useEffect, useRef, useState} from 'react';
-import {submitComment} from '../../services';
-import {Dialog, Transition} from "@headlessui/react";
+import React, { Fragment, useEffect, useRef, useState } from 'react';
+import { submitComment } from '../../services';
+import { Dialog, Transition } from "@headlessui/react";
 
-const CommentsForm = ({slug}) => {
+const CommentsForm = ({ slug }) => {
     const [error, setError] = useState(false);
     const [modalOpen, setModalOpen] = useState(false)
     const [localStorage, setLocalStorage] = useState(null);
@@ -21,10 +21,10 @@ const CommentsForm = ({slug}) => {
     const handleCommentSubmission = () => {
         setError(false);
 
-        const {value: comment} = commentEl.current;
-        const {value: name} = nameEl.current;
-        const {value: email} = emailEl.current;
-        const {checked: storeData} = storeDataEl.current;
+        const { value: comment } = commentEl.current;
+        const { value: name } = nameEl.current;
+        const { value: email } = emailEl.current;
+        const { checked: storeData } = storeDataEl.current;
 
         if (!comment || !name || !email) {
             setError(true);
@@ -33,7 +33,7 @@ const CommentsForm = ({slug}) => {
 
         setModalOpen(true);
 
-        const commentObj = {name, email, comment, slug};
+        const commentObj = { name, email, comment, slug };
 
         if (storeData) {
             window.localStorage.setItem('name', name);
@@ -52,7 +52,7 @@ const CommentsForm = ({slug}) => {
     const returnModal = () => {
         return <Transition.Root show={modalOpen} as={Fragment}>
             <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" initialFocus={closeButtonRef}
-                    onClose={setModalOpen}>
+                onClose={setModalOpen}>
                 <div
                     className="flex items-center justify-center min-h-screen text-center sm:block sm:p-0">
                     <Transition.Child
@@ -64,13 +64,13 @@ const CommentsForm = ({slug}) => {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <Dialog.Overlay className="fixed inset-0 bg-neutral-900 bg-opacity-75 transition-opacity"/>
+                        <Dialog.Overlay className="fixed inset-0 bg-neutral-900 bg-opacity-75 transition-opacity" />
                     </Transition.Child>
 
                     {/* This element is to trick the browser into centering the modal contents. */}
                     <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
-            &#8203;
-          </span>
+                        &#8203;
+                    </span>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -86,7 +86,7 @@ const CommentsForm = ({slug}) => {
                                 <div className="sm:flex sm:items-start">
                                     <div className="text-center ">
                                         <Dialog.Title as="h3"
-                                                      className="text-lg leading-6 font-medium text-white">
+                                            className="text-lg leading-6 font-medium text-white">
                                             Comment sent for approval!
                                         </Dialog.Title>
                                         <div>
@@ -115,7 +115,7 @@ const CommentsForm = ({slug}) => {
         </Transition.Root>
     }
 
-    return <div className='relative bg-lighter-washed-black shadow-lg rounded-lg p-8 mb-4'>
+    return <div className='relative bg-lighter-washed-black shadow-lg rounded-lg lg:p-8 p-4 mb-4'>
         <h3 className='text-white text-xl mb-2 font-semibold border-b pb-2 border-white/5'>
             Leave a comment
         </h3>
@@ -143,28 +143,31 @@ const CommentsForm = ({slug}) => {
                 name='email'
             />
         </div>
-
-        <button
-            className='absolute right-8 transition duration-400 ease transform hover:-translate-x-1 inline-block bg-amber-500 text-lg rounded-lg text-white px-8 py-1 cursor-pointer font-medium'
-            type='button'
-            onClick={handleCommentSubmission}>
-            Post
-        </button>
         {returnModal()}
-        <div className='grid grid-cols-1 gap-4 mb-4'>
-            <div>
-                <input
-                    ref={storeDataEl}
-                    type='checkbox'
-                    id='storeData'
-                    value='true'
-                />
-                <label className='font-normal text-neutral-400 cursor-pointer ml-2 text-s' htmlFor='storeData'>
-                    Save my details.
-                </label>
+        <div className='mt-4 lg:mb-0 w-full h-full lg:w-auto flex'>
+            <div className='flex-auto'>
+                <div>
+                    <input
+                        ref={storeDataEl}
+                        type='checkbox'
+                        id='storeData'
+                        value='true'
+                    />
+                    <label className='font-normal text-neutral-400 cursor-pointer ml-2 text-xs' htmlFor='storeData'>
+                        Save my details.
+                    </label>
+                    {error && <p className='text-xs text-red-500'>All fields are required!</p>}
+                </div>
             </div>
+            <button
+                className='transition duration-400 ease transform hover:-translate-x-1 bg-amber-500 text-lg rounded-lg text-white px-8 py-1 cursor-pointer font-medium'
+                type='button'
+                onClick={handleCommentSubmission}>
+                Post
+            </button>
         </div>
-        {error && <p className='text-xs text-red-500'>All fields are required!</p>}
+
+
     </div>;
 }
 

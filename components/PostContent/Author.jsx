@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Author = ({author}) => {
-    return <div className='flex items-center justify-center mb-4 p-8 lg:px-12 rounded-lg bg-white/[.045]'>
+    return <div className='flex items-center justify-center mb-4 lg:p-8 p-4 lg:px-12 rounded-lg bg-white/[.045]'>
         <div className="min-w-fit">
             <img
                 alt={author.name}
@@ -15,7 +15,7 @@ const Author = ({author}) => {
 
         <div className="ml-4">
             <h3 className='text-white text-xl font-bold'>{author.name}</h3>
-            <p className='text-white '>{author.bio}</p>
+            <p className='text-white text-xs lg:text-base'>{author.bio}</p>
         </div>
     </div>;
 };

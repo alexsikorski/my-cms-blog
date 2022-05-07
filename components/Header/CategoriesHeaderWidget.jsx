@@ -32,7 +32,7 @@ function returnBorderedItem(categories, category, itemCount) {
 const CategoriesHeaderWidget = ({categories}) => {
     let itemCount = 0;
     return (
-        <Menu className="ml-2 md:ml-1 mt-2 float-right lg:float-left lg:invisible relative">
+        <Menu className="ml-2 md:ml-1 mt-2 float-right lg:float-left lg:invisible relative border-none focus:ring-0">
             <div>
                 <Menu.Button
                     className="inline-block text-white hover:text-amber-500 transition duration-400">
