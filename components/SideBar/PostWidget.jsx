@@ -13,7 +13,6 @@ const PostWidget = ({ categories, slug }) => {
     const [title, setTitle] = useState();
 
     useEffect(() => {
-        setTitle("Recent Posts")
         if (slug) {
             getSimilarPosts(categories, slug).then((result) => {
                 if (result.length !== 0) {
@@ -25,12 +24,14 @@ const PostWidget = ({ categories, slug }) => {
                     // if 0 similar posts just use recent ones
                     getRecentPosts().then((result) => {
                         setRelatedOrRecentPosts(result);
+                        setTitle("Recent Posts")
                     });
                 }
             });
         } else {
             getRecentPosts().then((result) => {
                 setRelatedOrRecentPosts(result);
+                setTitle("Recent Posts")
             });
         }
     }, [slug]);
@@ -42,58 +43,27 @@ const PostWidget = ({ categories, slug }) => {
             </h3>
             {relatedOrRecentPosts.map((post) => (
                 <Link href={`/post/${post.slug}`} key={post.title}>
-                    {/* <div key={post.title} className='group w-full mb-2 text-center
-                    transition duration-400 text-neutral-200 font-medium hover:text-amber-500
-                    cursor-pointer border-2 border-leetcode-black rounded-lg'>
-                        <div>
-                            <img
-                                alt={post.title}
-                                className='thumb rounded-t-lg opacity-50 transition group-hover:opacity-100'
-                                src={post.featuredImage.url}
-                            />
-                        </div>
-                        <div className="bg-code-black rounded-b-lg p-2">
-                            <a className="text-sm font-bold">
-                                {post.title}
-                            </a>
-                            <p className='text-xs font-normal text-neutral-400'>
-                                {moment(post.createdAt).format('MMM DD, YYYY')}
-                            </p>
-                        </div>
-                    </div> */}
-
-                    {/* 
-                    <div className='grid grid-cols-2'>
-                        <div>
-                            <img
-                                    alt={post.title}
-                                    className='thumb rounded-l-lg opacity-50 transition group-hover:opacity-100'
-                                    src={post.featuredImage.url}
-                            />
-                        </div>
-                        <div className='bg-code-black rounded-r-lg'>
-                        <a className="text-sm font-bold">
-                                {post.title}
-                            </a>
-                            <p className='text-xs font-normal text-neutral-400'>
-                                {moment(post.createdAt).format('MMM DD, YYYY')}
-                            </p>
-                        </div>
-                    </div> */}
-
-                    <div className='relative mb-2 cursor-pointer'>
+                    <div className='group relative mb-2 cursor-pointer'>
                         <span class="absolute top-0 left-0 rounded-lg bg-gradient-to-b opacity-60 from-gray-400 via-gray-700-to-black h-full w-full"></span>
-                        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-white/5 px-3 py-1 rounded-lg'>
-                            <a className="drop-shadow-lg font-semibold text-white">
-                                {post.title}
-                            </a>
-                            <p className='font-semibold drop-shadow-lg text-xs text-neutral-200'>
-                                {moment(post.createdAt).format('MMM DD, YYYY')}
-                            </p>
+                        <span className='absolute top-0 right-0 h-8 w-8 bg-amber-500 rounded-bl-lg rounded-tr-lg drop-shadow-lg transition duration-400 opacity-0 group-hover:opacity-100'>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </span>
+                        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full rounded-lg'>
+                            <div className=''>
+                                <a className="drop-shadow-lg text-sm font-semibold text-white">
+                                    {post.title}
+                                </a>
+                                <p className='font-semibold drop-shadow-lg text-xs text-neutral-200'>
+                                    {moment(post.createdAt).format('MMM DD, YYYY')}
+                                </p>
+                            </div>
+
                         </div>
                         <img
                             alt={post.title}
-                            className='thumb rounded-lg  transition group-hover:opacity-100'
+                            className='thumb rounded-lg transition group-hover:opacity-100'
                             src={post.featuredImage.url}
                         />
 
