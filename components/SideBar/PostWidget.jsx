@@ -1,28 +1,46 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import Link from 'next/link';
-import {getRecentPosts, getSimilarPosts} from '../../services';
+import { getRecentPosts, getSimilarPosts } from '../../services';
 
-const PostWidget = ({categories, slug}) => {
-    const [relatedPosts, setRelatedPosts] = useState([]);
+
+
+
+const PostWidget = ({ categories, slug }) => {
+
+
+    const [relatedOrRecentPosts, setRelatedOrRecentPosts] = useState([]);
+    const [title, setTitle] = useState();
 
     useEffect(() => {
+        setTitle("Recent Posts")
         if (slug) {
-            getSimilarPosts(categories, slug)
-                .then((result) => setRelatedPosts(result))
+            getSimilarPosts(categories, slug).then((result) => {
+                if (result.length !== 0) {
+                    // if > 0 similar posts
+                    setRelatedOrRecentPosts(result);
+                    setTitle("Related Posts")
+                }
+                else {
+                    // if 0 similar posts just use recent ones
+                    getRecentPosts().then((result) => {
+                        setRelatedOrRecentPosts(result);
+                    });
+                }
+            });
         } else {
-            getRecentPosts()
-                .then((result) => setRelatedPosts(result))
+            getRecentPosts().then((result) => {
+                setRelatedOrRecentPosts(result);
+            });
         }
-    }, [slug])
+    }, [slug]);
 
     return (
-
         <div className='bg-lighter-washed-black shadow-lg rounded-lg lg:p-8 p-4 mb-4'>
             <h3 className='text-white text-xl mb-2 font-semibold border-b pb-2 border-white/5'>
-                {slug ? 'Related Posts' : 'Recent Posts'}
+                {title}
             </h3>
-            {relatedPosts.map((post) => (
+            {relatedOrRecentPosts.map((post) => (
                 <Link href={`/post/${post.slug}`} key={post.title}>
                     <div key={post.title} className='group w-full mb-2 text-center
                     transition duration-400 text-neutral-200 font-medium hover:text-amber-500
@@ -46,6 +64,7 @@ const PostWidget = ({categories, slug}) => {
                 </Link>
 
             ))}
+
         </div>);
 };
 
