@@ -5,8 +5,8 @@ import { Dialog, Transition } from "@headlessui/react";
 const CommentsForm = ({ slug }) => {
     const [error, setError] = useState(false);
     const [modalOpen, setModalOpen] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(false)
     const [localStorage, setLocalStorage] = useState(null);
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const closeButtonRef = useRef(null)
     const commentEl = useRef();
     const nameEl = useRef();
@@ -26,8 +26,19 @@ const CommentsForm = ({ slug }) => {
         const { value: email } = emailEl.current;
         const { checked: storeData } = storeDataEl.current;
 
+        // check if fields are empty
         if (!comment || !name || !email) {
             setError(true);
+            setErrorMessage("All fields are required!")
+            return;
+        }
+
+        // check if email matches format
+        if (!email.toLowerCase().match(
+            /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+        )) {
+            setError(true);
+            setErrorMessage("Email is not valid!")
             return;
         }
 
@@ -45,7 +56,6 @@ const CommentsForm = ({ slug }) => {
 
         submitComment(commentObj)
             .then((res) => {
-                setShowSuccessMessage(true);
                 commentEl.current.value = "";
             })
     }
@@ -157,7 +167,7 @@ const CommentsForm = ({ slug }) => {
                     <label className='font-normal text-neutral-400 cursor-pointer ml-2 text-xs' htmlFor='storeData'>
                         Save my details.
                     </label>
-                    {error && <p className='text-xs text-red-500'>All fields are required!</p>}
+                    {error && <p className='text-xs text-red-500'>{errorMessage}</p>}
                 </div>
             </div>
             <button
