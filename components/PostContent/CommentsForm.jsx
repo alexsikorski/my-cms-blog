@@ -46,6 +46,7 @@ const CommentsForm = ({ slug }) => {
         submitComment(commentObj)
             .then((res) => {
                 setShowSuccessMessage(true);
+                commentEl.current.value = "";
             })
     }
 
