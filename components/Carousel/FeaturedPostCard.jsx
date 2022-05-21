@@ -8,7 +8,7 @@ const FeaturedPostCard = ({ post }) => (
         <div className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-40 md:h-60"
             style={{ backgroundImage: `url('${post.featuredImage.url}')` }} />
         <div
-            className="absolute rounded-lg bg-center bg-gradient-to-b opacity-60 from-gray-400 via-gray-700 to-black w-full h-40 md:h-60" />
+            className="absolute rounded-lg bg-center bg-gradient-to-b opacity-70 from-neutral-500 via-neutral-700 to-neutral-900 w-full h-40 md:h-60" />
         <div className="flex flex-col rounded-lg p-2 items-center justify-center absolute w-full h-full  ">
             <p className="text-neutral-200 mb-2 drop-shadow-lg font-semibold text-xs bg-white/5 px-3 py-1 rounded-lg">
                 {moment(post.createdAt).format('MMM DD, YYYY')}</p>
