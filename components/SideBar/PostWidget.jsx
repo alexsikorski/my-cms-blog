@@ -44,10 +44,10 @@ const PostWidget = ({ categories, slug }) => {
             {relatedOrRecentPosts.map((post) => (
                 <Link href={`/post/${post.slug}`} key={post.title}>
                     <div className='group relative mb-2 cursor-pointer'>
-                        <span class="absolute top-0 left-0 rounded-lg bg-gradient-to-b opacity-60 from-gray-400 via-gray-700-to-black h-full w-full"></span>
+                        <span className="absolute top-0 left-0 rounded-lg bg-gradient-to-b opacity-60 from-gray-400 via-gray-700-to-black h-full w-full"></span>
                         <span className='absolute top-0 right-0 h-8 w-8 bg-amber-500 rounded-bl-lg rounded-tr-lg drop-shadow-lg transition duration-400 opacity-0 group-hover:opacity-100'>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
                         </span>
                         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full rounded-lg'>
