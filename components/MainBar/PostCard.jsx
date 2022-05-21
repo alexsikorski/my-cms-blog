@@ -26,7 +26,7 @@ const PostCard = ({ post }) => {
                             return (
                                 <Link href={`/category/${category.slug}`} key={category.slug}>
                                     <p className='inline mr-2 text-sm font-medium text-neutral-400 transition duration-400 cursor-pointer hover:text-amber-500'>
-                                        #{category.name}
+                                        #{category.name.toLowerCase()}
                                     </p>
                                 </Link>
                             )
@@ -38,8 +38,6 @@ const PostCard = ({ post }) => {
                         </p>
                     </div>
                 </div>
-
-
                 <p className='text-left text-lg text-neutral-200 font-medium  mt-4 mb-4'>
                     {post.brief}
                 </p>
@@ -52,7 +50,7 @@ const PostCard = ({ post }) => {
                             className='inline rounded-full align-middle'
                             src={post.author.photo.url}
                         />
-                        <p className='ml-2 inline font-normal text-lg text-neutral-400 align-middle'>
+                        <p className='ml-2 inline font-medium text-md text-neutral-400 align-middle'>
                             {post.author.name}</p>
 
                     </span>
@@ -60,10 +58,11 @@ const PostCard = ({ post }) => {
                         <Link href={`/post/${post.slug}`}>
                             <div className='p-1 transition duration-400 transform hover:-translate-x-1 bg-amber-500
                                 rounded-lg shadow-lg text-white cursor-pointer w-16'>
-                                <svg xmlns="http://www.w3.org/2000/svg" height='22' width='16' className='m-auto'
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" className="text-white m-auto"
+                                    height="20" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" fill="none"
+                                    strokeLinecap="round" strokeLinejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <polyline points="9 6 15 12 9 18"></polyline>
                                 </svg>
                             </div>
 

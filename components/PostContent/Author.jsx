@@ -15,7 +15,7 @@ const Author = ({author}) => {
 
         <div className="ml-4">
             <h3 className='text-white text-xl font-bold'>{author.name}</h3>
-            <p className='text-white text-xs lg:text-base'>{author.bio}</p>
+            <p className='text-white text-sm lg:text-base'>{author.bio}</p>
         </div>
     </div>;
 };
