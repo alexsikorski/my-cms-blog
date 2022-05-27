@@ -20,7 +20,6 @@ export default async function comments(req, res) {
     `
 
     try {
-        console.log(`Bearer ${process.env.GRAPHCMS_TOKEN}`)
         const result = await graphQLClient.request(query, req.body);
         return res.status(200).send(result);
     } catch (error) {
