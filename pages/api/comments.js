@@ -1,8 +1,10 @@
 import {gql, GraphQLClient} from "graphql-request";
+import { useEffect } from "react";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 
 export default async function comments(req, res) {
+
     const {name, email, slug, comment} = req.body;
 
     const graphQLClient = new GraphQLClient(graphqlAPI, {
@@ -18,6 +20,7 @@ export default async function comments(req, res) {
     `
 
     try {
+        console.log(`Bearer ${process.env.GRAPHCMS_TOKEN}`)
         const result = await graphQLClient.request(query, req.body);
         return res.status(200).send(result);
     } catch (error) {
