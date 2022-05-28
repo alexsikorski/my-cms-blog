@@ -46,7 +46,7 @@ const PostWidget = ({ categories, slug }) => {
                     <div className='group relative mb-2 cursor-pointer'>
                         <span className="absolute top-0 left-0 rounded-lg bg-gradient-to-b opacity-70 from-neutral-500 via-neutral-700 to-neutral-800 h-full w-full"></span>
                         <span className='absolute top-0 right-0 h-8 w-8 bg-amber-500 rounded-bl-lg rounded-tr-lg drop-shadow-lg transition duration-400 opacity-0 group-hover:opacity-100'>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" className="m-auto text-white h-7 w-4"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" className="m-auto text-white h-8 w-4"
                                 height="20" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" fill="none"
                                 strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -54,7 +54,7 @@ const PostWidget = ({ categories, slug }) => {
                             </svg>
                         </span>
                         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full rounded-lg'>
-                            <div className=''>
+                            <div className='px-3'>
                                 <a className="drop-shadow-lg text-sm font-semibold text-white">
                                     {post.title}
                                 </a>

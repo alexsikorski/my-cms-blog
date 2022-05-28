@@ -4,7 +4,7 @@ Project created to develop my own blog.
 
 ## The Website
 
-This website is hosted using AWS and this repositry is deployed using AWS Amplify.
+This website is hosted using AWS and this repositry is deployed using Vercel.
 If you would like to visit this website please click [here](https://www.alexsikorski.net/).
 
 ## Tools
