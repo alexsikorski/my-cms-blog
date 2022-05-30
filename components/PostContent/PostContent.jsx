@@ -11,6 +11,29 @@ function copyToClipBoard(id) {
     navigator.clipboard.writeText(element.textContent.substring(4, element.textContent.length));
 }
 
+function parseListItems(obj, index) {
+    let modifiedText = obj.text
+    if (obj.type == "link") {
+        modifiedText = (<a className='font-medium text-amber-500' target='_blank' key={index} href={obj.href}>{obj.children[0].text}</a>)
+    }
+    if (obj.bold) {
+        modifiedText = (<b key={index}>{obj.text}</b>);
+    }
+
+    if (obj.italic) {
+        modifiedText = (<em key={index}>{obj.text}</em>);
+    }
+
+    if (obj.underline) {
+        modifiedText = (<u key={index}>{obj.text}</u>);
+    }
+    if (obj.code) {
+        modifiedText = (<code key={index}
+            className='pl-1 pr-1 border-2 break-all border-2 border-leetcode-black bg-code-black text-neutral-200 mb-4 rounded-md'>{obj.text}</code>);
+    }
+    return modifiedText
+}
+
 const PostContent = ({ post }) => {
     const getContentFragment = (index, text, obj, type) => {
         let modifiedText = text;
@@ -37,11 +60,24 @@ const PostContent = ({ post }) => {
         }
 
         switch (type) {
-            //TODO: implement bullet-list and ordered number list
-            // case 'bulleted-list':
-            //   return <div className='mb-4' key={index}>
-            //     {modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}
-            //   </div>
+            case 'bulleted-list':
+                return <ol className='mb-4 list-disc'>
+                    {obj.children.map((listItem, i) =>
+                        <React.Fragment key={i}>
+                            <li className='ml-8'>
+                                {listItem.children[0].children.map((item, index) => parseListItems(item, index))}
+                            </li>
+                        </React.Fragment>)}
+                </ol>
+            case 'numbered-list':
+                return <ol className='mb-4 list-decimal'>
+                    {obj.children.map((listItem, i) =>
+                        <React.Fragment key={i}>
+                            <li className='ml-8'>
+                                {listItem.children[0].children.map((item, index) => parseListItems(item, index))}
+                            </li>
+                        </React.Fragment>)}
+                </ol>
             case 'code-block':
                 return <code id={index} key={index}
                     className='text-sm relative multiline-text block overflow-x-auto p-2 border-2 border-leetcode-black bg-code-black text-neutral-200 mb-4 rounded-md'>
@@ -123,8 +159,6 @@ const PostContent = ({ post }) => {
                         )
                     })}
                 </div>
-
-                {console.log(post.content.raw.children)}
                 {post.content.raw.children.map((typeObj, index) => {
                     const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item));
                     return getContentFragment(index, children, typeObj, typeObj.type);
