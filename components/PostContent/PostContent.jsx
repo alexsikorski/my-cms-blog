@@ -64,7 +64,7 @@ const PostContent = ({ post }) => {
                 return <ol className='mb-4 list-disc'>
                     {obj.children.map((listItem, i) =>
                         <React.Fragment key={i}>
-                            <li className='ml-8'>
+                            <li key={i} className='ml-8'>
                                 {listItem.children[0].children.map((item, index) => parseListItems(item, index))}
                             </li>
                         </React.Fragment>)}
@@ -73,7 +73,7 @@ const PostContent = ({ post }) => {
                 return <ol className='mb-4 list-decimal'>
                     {obj.children.map((listItem, i) =>
                         <React.Fragment key={i}>
-                            <li className='ml-8'>
+                            <li key={i} className='ml-8'>
                                 {listItem.children[0].children.map((item, index) => parseListItems(item, index))}
                             </li>
                         </React.Fragment>)}
