@@ -3,11 +3,7 @@ import moment from 'moment';
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../../services';
 
-
-
-
 const PostWidget = ({ categories, slug }) => {
-
 
     const [relatedOrRecentPosts, setRelatedOrRecentPosts] = useState([]);
     const [title, setTitle] = useState();
@@ -44,9 +40,9 @@ const PostWidget = ({ categories, slug }) => {
             {relatedOrRecentPosts.map((post) => (
                 <Link href={`/post/${post.slug}`} key={post.title}>
                     <div className='group relative mb-2 cursor-pointer'>
-                        <span className="absolute top-0 left-0 rounded-lg bg-gradient-to-b opacity-70 from-neutral-500 via-neutral-700 to-neutral-800 h-full w-full"></span>
-                        <span className='absolute top-0 right-0 h-8 w-8 bg-amber-500 rounded-bl-lg rounded-tr-lg drop-shadow-lg transition duration-400 opacity-0 group-hover:opacity-100'>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" className="m-auto text-white h-8 w-4"
+                        <span className="absolute top-0 left-0 rounded bg-gradient-to-b opacity-70 from-neutral-500 via-neutral-700 to-neutral-800 h-full w-full"></span>
+                        <span className='absolute top-0 right-0 h-6 w-6 bg-amber-500 rounded-bl-lg rounded-tr-lg drop-shadow-lg transition duration-400 opacity-0 group-hover:opacity-100'>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="text-white h-4 w-4 m-1"
                                 height="20" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" fill="none"
                                 strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -66,7 +62,7 @@ const PostWidget = ({ categories, slug }) => {
                         </div>
                         <img
                             alt={post.title}
-                            className='thumb rounded-lg transition group-hover:opacity-100'
+                            className='thumb rounded transition group-hover:opacity-100'
                             src={post.featuredImage.url}
                         />
 
