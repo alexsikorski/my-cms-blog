@@ -61,7 +61,7 @@ const PostContent = ({ post }) => {
 
         switch (type) {
             case 'bulleted-list':
-                return <ol className='mb-4 list-disc'>
+                return <ol key={index} className='mb-4 list-disc'>
                     {obj.children.map((listItem, i) =>
                         <React.Fragment key={i}>
                             <li key={i} className='ml-8'>
@@ -70,7 +70,7 @@ const PostContent = ({ post }) => {
                         </React.Fragment>)}
                 </ol>
             case 'numbered-list':
-                return <ol className='mb-4 list-decimal'>
+                return <ol key={index} className='mb-4 list-decimal'>
                     {obj.children.map((listItem, i) =>
                         <React.Fragment key={i}>
                             <li key={i} className='ml-8'>
@@ -129,8 +129,8 @@ const PostContent = ({ post }) => {
         </div>
         <div className='text-neutral-200 lg:p-8 p-4 mb-4'>
             <div>
-                <div class="mb-4 w-full h-full flex">
-                    <span class="flex-auto">
+                <div className="mb-4 w-full h-full flex">
+                    <span className="flex-auto">
                         <img
                             alt={post.author.name}
                             height='30px'
@@ -138,7 +138,7 @@ const PostContent = ({ post }) => {
                             className='inline rounded-full align-middle'
                             src={post.author.photo.url}
                         />
-                        <p class="ml-2 inline font-medium text-md text-neutral-400 align-middle">{post.author.name}</p>
+                        <p className="ml-2 inline font-medium text-md text-neutral-400 align-middle">{post.author.name}</p>
                     </span>
                     <div className='flex-auto'>
                         <p className='text-right font-medium text-sm text-neutral-400'>
