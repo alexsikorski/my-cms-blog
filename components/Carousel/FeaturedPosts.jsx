@@ -27,6 +27,7 @@ const responsive = {
 const FeaturedPosts = () => {
     const [featuredPosts, setFeaturedPosts] = useState([]);
     const [dataLoaded, setDataLoaded] = useState(false);
+    let cardIndex = 0;
 
     useEffect(() => {
         getFeaturedPosts().then((result) => {
@@ -40,7 +41,7 @@ const FeaturedPosts = () => {
         return (
             <div {...restArrowProps}
                 className='select-none absolute left-0 cursor-pointer transition hover:bg-amber-500 text-white/50 hover:text-white py-3 px-4 rounded-r-lg'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10" className="h-6 w-5 w-full"
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" className="h-6 w-5 w-full"
                     height="20" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" fill="none"
                     strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -72,7 +73,7 @@ const FeaturedPosts = () => {
             <Carousel infinite customLeftArrow={<ArrowLeft />} customRightArrow={<ArrowRight />} responsive={responsive}
                 itemClass="px-2">
                 {dataLoaded && featuredPosts.map((post, index) => (
-                    <FeaturedPostCard key={index} post={post} />
+                    <FeaturedPostCard key={index} post={post} cardIndex={cardIndex++} />
                 ))}
             </Carousel>
         </div>

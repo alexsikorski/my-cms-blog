@@ -68,9 +68,9 @@ const PostWidget = ({ categories, slug }) => {
                             />
                         </div>
                         <div className='flex justify-center p-1 rounded-b-lg bg-leetcode-black text-neutral-400'>
-                            {post.categories.map((category) => {
+                            {post.categories.map((category, index) => {
                                 return (
-                                    <span className='text-xs font-medium ml-1'>#{category.name.toLowerCase()}</span>
+                                    <span key={index} className='text-xs font-medium ml-1'>#{category.name.toLowerCase()}</span>
                                 )
                             })}
                         </div>
