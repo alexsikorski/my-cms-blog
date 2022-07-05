@@ -1,6 +1,6 @@
 # alexsikorski.net
 
-This project created to develop my own blog. Making my own blog instead of using a template or a ready made site is an attempt to understand web development more. Personally, I have never been too interested in web development but I see immense value in having the ability to hand craft a website that is accessible to anyone around the world. Therefore, I deemed the initiation of this skillset as a requirement. The purpose of this blog was originally post my LeetCode solutions/personal projects as a way to document my studying/findings. This way I gain a better understanding and someone who visits my site will (hopefully) learn something.
+This project created to develop my own blog. Making my own blog instead of using a template or a ready made site is an attempt to understand web development more. Personally, I have never been too interested in web development but I see immense value in having the ability to hand craft a website that is accessible to anyone around the world. The purpose of this blog was originally post my LeetCode solutions/personal projects as a way to document my studying/findings. This way I gain a better understanding and someone who visits my site will (hopefully) learn something.
 
 ## The Website
 
