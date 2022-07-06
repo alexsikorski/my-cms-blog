@@ -26,7 +26,7 @@ const Header = () => {
                     <SearchHeaderWidget/>
                 </span>
                 <span>
-                    <a href="https://www.linkedin.com/in/alex-sikorski-541249182" target="_blank"
+                    <a href="https://www.linkedin.com/in/alexmsikorski" target="_blank"
                     //  lg:ml-1 lg:p-2 lg:m-0 p-1 mt-1 ml-1
                        className="float-right lg:p-2 lg:m-0 p-1 mt-1 align-middle text-white hover-hover:hover:text-amber-500 transition duration-400 hover-hover:hover:cursor-pointer hover-hover:hover:text-amber-500">
                         <svg xmlns="http://www.w3.org/2000/svg"
